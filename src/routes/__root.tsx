@@ -14,21 +14,19 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <div className="min-h-screen bg-navy-deep text-chalk flex items-center justify-center px-6">
+      <div className="max-w-lg">
+        <p className="mono text-xs tracking-[0.3em] text-kit uppercase">Error 404 · Offside</p>
+        <h1 className="display text-[clamp(4rem,14vw,10rem)] mt-4">Out of Play</h1>
+        <p className="text-sand/70 mt-4 text-lg">
+          That page has left the pitch. Head back to the match centre.
         </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
+        <Link
+          to="/"
+          className="inline-block mt-8 bg-kit text-chalk px-6 py-3 mono uppercase tracking-widest text-sm hover:bg-kit-hot transition-colors"
+        >
+          ← Return to Clubhouse
+        </Link>
       </div>
     </div>
   );
@@ -42,29 +40,19 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
+    <div className="min-h-screen bg-navy-deep text-chalk flex items-center justify-center px-6">
+      <div className="max-w-lg">
+        <p className="mono text-xs tracking-[0.3em] text-kit uppercase">Match Suspended</p>
+        <h1 className="display text-6xl mt-4">Something went sideways.</h1>
+        <div className="mt-8 flex gap-3">
           <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            onClick={() => { router.invalidate(); reset(); }}
+            className="bg-kit text-chalk px-6 py-3 mono uppercase tracking-widest text-sm hover:bg-kit-hot transition-colors"
           >
-            Try again
+            Restart the Half
           </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
-            Go home
+          <a href="/" className="border border-sand/30 px-6 py-3 mono uppercase tracking-widest text-sm hover:bg-sand/10 transition-colors">
+            Clubhouse
           </a>
         </div>
       </div>
@@ -77,21 +65,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Marblehead Over-40 Soccer Club · Est. 1981" },
+      { name: "description", content: "Marblehead's over-40 men's soccer side. Playing in the New England Over-the-Hill Soccer League (OTHSL) since 1981. Fixtures, squad, and how to join." },
+      { property: "og:title", content: "Marblehead Over-40 Soccer Club" },
+      { property: "og:description", content: "Coastal Massachusetts. Over-the-Hill Soccer League. 40+ years on the pitch." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Marblehead O-40 SC" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" },
     ],
   }),
   shellComponent: RootShell,
@@ -103,23 +90,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
+      <head><HeadContent /></head>
+      <body>{children}<Scripts /></body>
     </html>
   );
 }
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );
