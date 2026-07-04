@@ -5,66 +5,68 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ============================================================
-   MARBLEHEAD OVER-40 SOCCER CLUB — Sport / Kinetic archetype
-   Palette: nautical navy, sand, chalk, kit red, sea-glass
+   MARBLEHEAD FOOTBALL CLUB (MHD FC) — nonprofit / heritage
+   Classic navy + antique gold + cream palette
    ============================================================ */
 
 @theme inline {
-  --font-display: "Anton", "Impact", sans-serif;
-  --font-body: "Barlow Condensed", ui-sans-serif, system-ui;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 6px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-navy: var(--navy);
   --color-navy-deep: var(--navy-deep);
-  --color-sand: var(--sand);
-  --color-chalk: var(--chalk);
-  --color-kit: var(--kit);
-  --color-kit-hot: var(--kit-hot);
-  --color-seaglass: var(--seaglass);
-  --color-rope: var(--rope);
+  --color-navy-soft: var(--navy-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-cream: var(--cream);
+  --color-parchment: var(--parchment);
+  --color-crimson: var(--crimson);
+  --color-ink: var(--ink);
   --color-line: var(--line);
 
-  --color-primary: var(--kit);
-  --color-primary-foreground: var(--chalk);
-  --color-secondary: var(--navy);
-  --color-secondary-foreground: var(--sand);
+  --color-primary: var(--navy-deep);
+  --color-primary-foreground: var(--cream);
+  --color-secondary: var(--gold);
+  --color-secondary-foreground: var(--navy-deep);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--seaglass);
+  --color-accent: var(--gold-soft);
   --color-accent-foreground: var(--navy-deep);
   --color-border: var(--line);
   --color-input: var(--line);
-  --color-ring: var(--kit);
+  --color-ring: var(--gold);
   --color-card: var(--card);
   --color-card-foreground: var(--foreground);
   --color-popover: var(--card);
   --color-popover-foreground: var(--foreground);
-  --color-destructive: var(--kit-hot);
-  --color-destructive-foreground: var(--chalk);
+  --color-destructive: var(--crimson);
+  --color-destructive-foreground: var(--cream);
 }
 
 :root {
-  --background: oklch(0.96 0.012 85);          /* warm sand paper */
-  --foreground: oklch(0.16 0.03 250);          /* deep navy ink */
-  --navy: oklch(0.24 0.06 250);
-  --navy-deep: oklch(0.14 0.04 250);
-  --sand: oklch(0.92 0.025 82);
-  --chalk: oklch(0.98 0.008 85);
-  --kit: oklch(0.56 0.19 27);                  /* jersey red */
-  --kit-hot: oklch(0.65 0.24 25);
-  --seaglass: oklch(0.78 0.07 195);
-  --rope: oklch(0.72 0.08 65);
-  --line: oklch(0.18 0.03 250 / 0.18);
-  --muted: oklch(0.90 0.02 82);
-  --muted-foreground: oklch(0.35 0.03 250);
-  --card: oklch(0.98 0.008 85);
-  --radius: 4px;
+  --background: oklch(0.975 0.008 85);         /* warm parchment */
+  --foreground: oklch(0.18 0.03 250);
+  --ink: oklch(0.14 0.02 250);
+  --navy: oklch(0.28 0.06 255);
+  --navy-deep: oklch(0.18 0.05 255);
+  --navy-soft: oklch(0.38 0.05 255);
+  --cream: oklch(0.97 0.012 85);
+  --parchment: oklch(0.93 0.02 82);
+  --gold: oklch(0.68 0.11 78);                 /* antique gold */
+  --gold-soft: oklch(0.82 0.06 82);
+  --crimson: oklch(0.45 0.16 25);              /* deep club red */
+  --line: oklch(0.18 0.03 250 / 0.14);
+  --muted: oklch(0.93 0.015 82);
+  --muted-foreground: oklch(0.38 0.02 250);
+  --card: oklch(0.985 0.006 85);
+  --radius: 3px;
 }
 
 @layer base {
@@ -74,49 +76,51 @@
     background: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
-    font-weight: 500;
-    -webkit-font-smoothing: antialiased;
-  }
-  h1, h2, h3, .display {
-    font-family: var(--font-display);
     font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, .display, .serif {
+    font-family: var(--font-display);
+    font-weight: 500;
     letter-spacing: -0.01em;
-    line-height: 0.88;
-    text-transform: uppercase;
+    line-height: 1.05;
   }
   .mono, code, kbd, samp {
     font-family: var(--font-mono);
     font-feature-settings: "tnum" 1, "zero" 1;
   }
+  .eyebrow {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
 }
 
-/* Utilities specific to the club */
-@utility pitch-lines {
+/* Utilities */
+@utility gold-rule {
+  background: linear-gradient(to right, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
+  height: 1px;
+}
+
+@utility parchment-texture {
   background-image:
-    linear-gradient(to right, oklch(0.98 0.008 85 / 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.98 0.008 85 / 0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
+    radial-gradient(circle at 20% 30%, oklch(0 0 0 / 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 70% 60%, oklch(0 0 0 / 0.02) 1px, transparent 1px);
+  background-size: 24px 24px, 32px 32px;
 }
 
-@utility kit-stripe {
-  background: repeating-linear-gradient(
-    135deg,
-    var(--kit) 0 14px,
-    var(--navy-deep) 14px 28px
-  );
+@utility crest-frame {
+  border: 1px solid var(--gold);
+  outline: 1px solid var(--gold);
+  outline-offset: 4px;
 }
 
 @utility ticker-mask {
-  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
-}
-
-@utility jersey-num {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.04em;
-  line-height: 0.8;
-  font-feature-settings: "tnum" 1;
+  mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 6%, black 94%, transparent);
 }
 
 @keyframes marquee {
@@ -124,7 +128,7 @@
   to { transform: translateX(-50%); }
 }
 @utility animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 45s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
