@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Nav, Footer } from "@/components/site-chrome";
+import { Nav, Footer, Crest, Section } from "@/components/site-chrome";
 import hero from "@/assets/hero-match.jpg";
 import pitch from "@/assets/pitch-coast.jpg";
 import huddle from "@/assets/squad-huddle.jpg";
@@ -7,10 +7,10 @@ import huddle from "@/assets/squad-huddle.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Marblehead Over-40 Soccer Club · Est. 1981" },
-      { name: "description", content: "Coastal Massachusetts adult soccer. A founding member of the New England Over-the-Hill Soccer League. Fixtures, squad, history since 1981." },
-      { property: "og:title", content: "Marblehead Over-40 Soccer Club" },
-      { property: "og:description", content: "40+ years on the pitch in the OTHSL. Seaside Park, Marblehead MA." },
+      { title: "Marblehead Football Club · MHD FC" },
+      { name: "description", content: "A nonprofit soccer club on the North Shore of Massachusetts. Three teams, one mission — grow the game, support Lynn Youth Soccer, and expand access to competitive football." },
+      { property: "og:title", content: "Marblehead Football Club" },
+      { property: "og:description", content: "Nonprofit. Community. Football." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -18,219 +18,193 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-function Stat({ n, l, s }: { n: string; l: string; s?: string }) {
-  return (
-    <div className="border-t-2 border-sand/20 pt-4">
-      <p className="mono text-[10px] tracking-[0.3em] uppercase text-kit">{l}</p>
-      <p className="jersey-num text-sand text-[clamp(3rem,7vw,6rem)] mt-1">{n}</p>
-      {s && <p className="mono text-[10px] tracking-[0.2em] uppercase text-sand/50">{s}</p>}
-    </div>
-  );
-}
-
 function Home() {
   return (
     <div className="bg-background text-foreground">
       <Nav />
 
-      {/* HERO — full-bleed action photo with broadcast lower-third */}
-      <section className="relative min-h-screen bg-navy-deep text-chalk overflow-hidden">
-        <img src={hero} alt="Marblehead player striking the ball at Seaside Park" width={1920} height={1280} className="absolute inset-0 w-full h-full object-cover opacity-55" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/40 via-navy-deep/20 to-navy-deep" />
-        <div className="absolute inset-0 pitch-lines opacity-40" />
-
-        <div className="relative mx-auto max-w-[1400px] px-6 pt-32 pb-16 min-h-screen flex flex-col justify-between">
-          <div className="flex items-center gap-3 mono text-[11px] tracking-[0.3em] uppercase text-sand/70">
-            <span className="w-2 h-2 rounded-full bg-kit animate-pulse" />
-            <span>Live · Season 44 · Fall Campaign</span>
-            <span className="ml-auto hidden md:inline">42.4998°N / 70.8586°W</span>
-          </div>
-
-          <div className="max-w-6xl">
-            <p className="mono text-[11px] tracking-[0.35em] uppercase text-kit">Marblehead, Massachusetts · Est. 1981</p>
-            <h1 className="display text-[clamp(4rem,17vw,15rem)] mt-4">
-              Older.<br/>
-              <span className="text-kit">Faster</span> on the ball.
+      {/* HERO */}
+      <section className="relative bg-navy-deep text-cream overflow-hidden">
+        <img src={hero} alt="MHD FC match action" width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover opacity-35" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/50 to-navy-deep" />
+        <div className="relative mx-auto max-w-[1400px] px-6 py-28 md:py-40 grid md:grid-cols-12 gap-10 items-center">
+          <div className="md:col-span-8">
+            <p className="eyebrow text-gold">A Nonprofit Football Club · Est. 2001</p>
+            <h1 className="display text-[clamp(3rem,8vw,7rem)] mt-5 leading-[0.95] font-medium">
+              Football for the <em className="text-gold not-italic">community</em> — on the North Shore, since 2001.
             </h1>
-            <p className="mt-6 max-w-xl text-sand/80 text-lg md:text-xl leading-snug">
-              We're the Marblehead men's over-40 side — a founding chapter of the New England Over-the-Hill Soccer League. Ninety minutes of proper football. Every Sunday since Reagan's first term.
+            <p className="mt-8 max-w-2xl text-lg text-cream/80 leading-relaxed">
+              Marblehead Football Club is a nonprofit 501(c)(3) fielding three teams and running programs that expand access to the game — in partnership with Lynn Youth Soccer and the North Shore Soccer Academy.
             </p>
-            <div className="mt-10 flex items-center gap-6">
-              <Link to="/join" className="group inline-flex items-center gap-3 bg-kit text-chalk px-6 py-4 mono text-sm tracking-[0.25em] uppercase hover:bg-kit-hot transition-colors">
-                Trial with the squad
-                <span className="group-hover:translate-x-1 transition-transform">▸</span>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link to="/about" className="bg-gold text-navy-deep px-7 py-3.5 font-semibold text-sm tracking-wide hover:bg-cream transition-colors">
+                Our Mission
               </Link>
-              <Link to="/schedule" className="mono text-xs tracking-[0.3em] uppercase text-sand/80 hover:text-kit underline underline-offset-8 decoration-kit/40">
-                See fixtures →
+              <Link to="/contact" className="border border-gold/60 text-cream px-7 py-3.5 font-semibold text-sm tracking-wide hover:bg-gold hover:text-navy-deep transition-colors">
+                Donate & Support
+              </Link>
+              <Link to="/teams" className="text-cream/80 text-sm underline underline-offset-8 decoration-gold/60 hover:text-gold">
+                Meet the three teams →
               </Link>
             </div>
           </div>
-
-          {/* Scoreboard */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 mt-16">
-            <Stat n="44" l="Seasons" s="Consecutive" />
-            <Stat n="3" l="Division" s="OTHSL East" />
-            <Stat n="90'" l="Match Length" s="Two halves" />
-            <Stat n="40+" l="Age Bracket" s="No exceptions" />
-          </div>
-        </div>
-      </section>
-
-      {/* TICKER */}
-      <div className="bg-kit text-chalk py-3 overflow-hidden ticker-mask">
-        <div className="flex gap-12 whitespace-nowrap animate-marquee mono text-sm tracking-[0.3em] uppercase">
-          {Array.from({length:2}).flatMap((_,i) => [
-            "Next Fixture: vs. Salem Sr. FC · Sun 10:00",
-            "★",
-            "Result: Marblehead 2 — 1 Beverly",
-            "★",
-            "Home Kit: Navy / Red Trim",
-            "★",
-            "Recruiting: Center-back · Keeper cover",
-            "★",
-          ].map((t,j)=>(<span key={`${i}-${j}`}>{t}</span>)))}
-        </div>
-      </div>
-
-      {/* SINCE 1981 — editorial slab */}
-      <section className="mx-auto max-w-[1400px] px-6 py-24 md:py-32 grid md:grid-cols-12 gap-8">
-        <div className="md:col-span-4">
-          <p className="mono text-[10px] tracking-[0.35em] uppercase text-kit">§ 01 · Origin</p>
-          <p className="jersey-num text-[clamp(5rem,12vw,11rem)] text-navy mt-4 leading-[0.75]">1981</p>
-          <p className="mono text-xs tracking-[0.25em] uppercase text-muted-foreground mt-2">The founding autumn</p>
-        </div>
-        <div className="md:col-span-8 md:pt-8">
-          <h2 className="display text-4xl md:text-6xl text-navy-deep">
-            A side from Marblehead joined the Over-the-Hill league — and never left the pitch.
-          </h2>
-          <p className="mt-6 text-lg md:text-xl max-w-2xl leading-relaxed text-foreground/80">
-            In the fall of 1981, a group of local players formed a team and joined the fledgling <a className="text-kit underline underline-offset-4" href="https://www.othsl.org" target="_blank" rel="noopener noreferrer">New England Over-the-Hill Soccer League</a>. Forty-plus seasons later we're still out at Seaside Park on Sunday mornings — same league, same standards, three generations of coastal footballers deep.
-          </p>
-          <div className="mt-10 grid grid-cols-3 gap-8 border-t-2 border-navy/10 pt-8">
-            <div>
-              <p className="jersey-num text-4xl md:text-5xl text-kit">01</p>
-              <p className="mono text-xs uppercase tracking-widest mt-2">Founding Club<br/><span className="text-muted-foreground">OTHSL Charter</span></p>
-            </div>
-            <div>
-              <p className="jersey-num text-4xl md:text-5xl text-kit">II</p>
-              <p className="mono text-xs uppercase tracking-widest mt-2">Divisional Titles<br/><span className="text-muted-foreground">'09 · '17</span></p>
-            </div>
-            <div>
-              <p className="jersey-num text-4xl md:text-5xl text-kit">∞</p>
-              <p className="mono text-xs uppercase tracking-widest mt-2">Rounds at the Landing<br/><span className="text-muted-foreground">Post-match tradition</span></p>
+          <div className="md:col-span-4 justify-self-center md:justify-self-end">
+            <div className="crest-frame p-8 bg-navy-deep/60 backdrop-blur-sm">
+              <Crest className="w-40 h-48" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* SQUAD — three age brackets, jersey cards */}
-      <section className="bg-navy-deep text-chalk py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 pitch-lines opacity-30" />
-        <div className="relative mx-auto max-w-[1400px] px-6">
-          <div className="flex items-end justify-between flex-wrap gap-4">
-            <div>
-              <p className="mono text-[10px] tracking-[0.35em] uppercase text-kit">§ 02 · The Squad</p>
-              <h2 className="display text-5xl md:text-7xl mt-3">Three sides.<br/>One clubhouse.</h2>
+      {/* MISSION STRIP */}
+      <section className="bg-cream border-b border-navy-deep/10">
+        <div className="mx-auto max-w-[1400px] px-6 py-16 grid md:grid-cols-4 gap-10">
+          {[
+            { n: "3", l: "Senior Teams" },
+            { n: "24+", l: "Years of Play" },
+            { n: "100%", l: "Volunteer-Run" },
+            { n: "1", l: "Growing Partnership · Lynn YS" },
+          ].map((s) => (
+            <div key={s.l} className="border-t-2 border-gold pt-4">
+              <p className="display text-5xl md:text-6xl text-navy-deep font-semibold">{s.n}</p>
+              <p className="eyebrow text-navy-soft mt-2">{s.l}</p>
             </div>
-            <p className="max-w-md text-sand/70">Pick your bracket. All three train together on Thursday nights, then split into league fixtures on Sundays.</p>
-          </div>
+          ))}
+        </div>
+      </section>
 
-          <div className="mt-16 grid md:grid-cols-3 gap-6">
+      {/* ABOUT */}
+      <Section>
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <p className="eyebrow text-crimson">About the Club</p>
+            <h2 className="display text-5xl md:text-6xl text-navy-deep mt-4">A club with a purpose beyond the pitch.</h2>
+          </div>
+          <div className="md:col-span-8 space-y-6 text-lg leading-relaxed text-foreground/85">
+            <p>
+              MHD FC was founded to keep competitive adult football alive on the North Shore — and to use the resources of a strong club to open doors for young players in neighboring communities. Today the club fields <strong>three teams</strong> and runs its charitable work in partnership with <strong>Lynn Youth Soccer</strong> and <strong>North Shore Soccer Academy (NSSA)</strong>.
+            </p>
+            <p>
+              Every board member contributes annually. Every dollar raised through gear drives, watch parties, and community events flows directly into scholarships, equipment, and access.
+            </p>
+            <div className="flex flex-wrap gap-6 pt-4">
+              <Link to="/history" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">Read the History →</Link>
+              <Link to="/committee" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">Meet the Committee →</Link>
+              <Link to="/bylaws" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">Club By-Laws →</Link>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* TEAMS */}
+      <section className="bg-parchment border-y border-navy-deep/10">
+        <div className="mx-auto max-w-[1400px] px-6 py-24">
+          <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
+            <div>
+              <p className="eyebrow text-crimson">The Three Teams</p>
+              <h2 className="display text-5xl md:text-6xl text-navy-deep mt-3">One crest, three sides.</h2>
+            </div>
+            <Link to="/teams" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">All teams →</Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
             {[
-              { num: "40", name: "Over-40s", div: "OTHSL Div. 3 East", note: "Our founding side. Competitive but honest. Room for one center-back this season." },
-              { num: "50", name: "Over-50s", div: "OTHSL Masters", note: "Slower pace, sharper touches. Zero rebuilding — this group has been together twelve years." },
-              { num: "30", name: "Over-30s", div: "Friendly / Prep", note: "The next generation. Rolls into the O-40 pipeline. Sunday afternoon slot." },
-            ].map((s) => (
-              <div key={s.num} className="group relative border-2 border-sand/15 hover:border-kit transition-colors p-8 bg-navy overflow-hidden">
-                <div className="absolute top-0 right-0 w-full h-2 kit-stripe opacity-40" />
-                <p className="mono text-[10px] tracking-[0.3em] uppercase text-sand/50">Bracket</p>
-                <p className="jersey-num text-[10rem] md:text-[12rem] text-kit leading-none -ml-2 group-hover:text-kit-hot transition-colors">{s.num}</p>
-                <p className="display text-3xl mt-2">{s.name}</p>
-                <p className="mono text-xs tracking-widest uppercase text-seaglass mt-2">{s.div}</p>
-                <p className="text-sand/70 mt-4 leading-relaxed">{s.note}</p>
-              </div>
+              { name: "MHD FC First XI", league: "OTHSL Open Division", note: "Our flagship senior side. Sundays at Seaside Park." },
+              { name: "MHD FC Over-40", league: "OTHSL Masters", note: "The founding side. Continuous play since our earliest seasons." },
+              { name: "MHD FC 068", league: "Beverly Affiliate", note: "Our regional affiliate team, extending the club footprint through the North Shore." },
+            ].map((t) => (
+              <article key={t.name} className="bg-cream border border-navy-deep/10 p-8 hover:border-gold transition-colors group">
+                <Crest className="w-12 h-14" />
+                <p className="display text-2xl text-navy-deep mt-6 font-semibold">{t.name}</p>
+                <p className="eyebrow text-gold mt-2">{t.league}</p>
+                <p className="mt-4 text-foreground/75 leading-relaxed">{t.note}</p>
+                <Link to="/teams" className="mt-6 inline-block text-crimson font-semibold text-sm border-b border-crimson group-hover:border-navy-deep group-hover:text-navy-deep">Squad details →</Link>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* HUDDLE — split image + copy */}
-      <section className="grid md:grid-cols-2 min-h-[600px]">
-        <div className="relative bg-navy-deep">
-          <img src={huddle} alt="Marblehead players huddled on the sideline" loading="lazy" width={1400} height={1600} className="w-full h-full object-cover opacity-90" />
-        </div>
-        <div className="bg-sand p-10 md:p-20 flex flex-col justify-center">
-          <p className="mono text-[10px] tracking-[0.35em] uppercase text-kit">§ 03 · The Code</p>
-          <h2 className="display text-4xl md:text-6xl text-navy-deep mt-4">
-            Show up.<br/>
-            Play hard.<br/>
-            Buy the next round.
-          </h2>
-          <ul className="mt-10 space-y-4 mono text-sm uppercase tracking-widest text-navy-deep">
-            <li className="flex gap-4 border-b border-navy/15 pb-4"><span className="text-kit">01</span> No slide tackles from behind.</li>
-            <li className="flex gap-4 border-b border-navy/15 pb-4"><span className="text-kit">02</span> Referee's word is final. Full stop.</li>
-            <li className="flex gap-4 border-b border-navy/15 pb-4"><span className="text-kit">03</span> Kit dues paid by season opener.</li>
-            <li className="flex gap-4"><span className="text-kit">04</span> Post-match at the Landing. Non-negotiable.</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* MATCH CENTRE preview */}
-      <section className="bg-background py-24 md:py-32">
-        <div className="mx-auto max-w-[1400px] px-6">
-          <div className="flex items-end justify-between flex-wrap gap-4 mb-12">
-            <div>
-              <p className="mono text-[10px] tracking-[0.35em] uppercase text-kit">§ 04 · Match Centre</p>
-              <h2 className="display text-5xl md:text-7xl text-navy-deep mt-3">Next Three<br/>on the Card</h2>
+      {/* LYNN PARTNERSHIP */}
+      <section className="bg-navy-deep text-cream">
+        <div className="mx-auto max-w-[1400px] px-6 py-24 md:py-28 grid md:grid-cols-12 gap-10 items-center">
+          <div className="md:col-span-5">
+            <img src={huddle} alt="Youth players training" loading="lazy" width={1200} height={1400} className="w-full aspect-[4/5] object-cover border-4 border-gold" />
+          </div>
+          <div className="md:col-span-7">
+            <p className="eyebrow text-gold">Community Partnership</p>
+            <h2 className="display text-5xl md:text-6xl mt-4">Together with Lynn Youth Soccer.</h2>
+            <p className="mt-6 text-cream/80 text-lg leading-relaxed">
+              Through outreach led by our board and coaches, MHD FC has begun building a lasting partnership with Lynn Youth Soccer — attending tryouts, identifying scholarship candidates for the North Shore Soccer Academy, and expanding access to elite-level training for young players who might not otherwise have the opportunity.
+            </p>
+            <p className="mt-4 text-cream/80 text-lg leading-relaxed">
+              Our goal is to name our first cohort of scholarship recipients ahead of the coming season.
+            </p>
+            <div className="mt-8 grid sm:grid-cols-3 gap-6 border-t border-gold/30 pt-8">
+              <div><p className="display text-4xl text-gold font-semibold">1st</p><p className="eyebrow text-cream/60 mt-2">Scholarship Cohort · Coming Season</p></div>
+              <div><p className="display text-4xl text-gold font-semibold">Ongoing</p><p className="eyebrow text-cream/60 mt-2">Tryout Attendance in Lynn</p></div>
+              <div><p className="display text-4xl text-gold font-semibold">NSSA</p><p className="eyebrow text-cream/60 mt-2">Player Development Pathway</p></div>
             </div>
-            <Link to="/schedule" className="mono text-xs tracking-[0.3em] uppercase text-navy-deep hover:text-kit underline underline-offset-8">Full fixture list →</Link>
-          </div>
-
-          <div className="border-t-2 border-navy-deep">
-            {[
-              { d: "SUN 03 NOV", t: "10:00", h: "Marblehead O-40", a: "Salem Sr. FC", v: "Seaside Park · Home", code: "MH-SLM/44" },
-              { d: "SUN 10 NOV", t: "10:00", h: "Beverly Old Guard", a: "Marblehead O-40", v: "Endicott Turf · Away", code: "BEV-MH/44" },
-              { d: "SUN 17 NOV", t: "09:30", h: "Marblehead O-40", a: "Cape Ann Utd.", v: "Seaside Park · Home", code: "MH-CAU/44" },
-            ].map((m, i) => (
-              <div key={i} className="grid grid-cols-12 gap-4 py-6 border-b border-navy-deep/15 items-center hover:bg-sand/50 transition-colors">
-                <p className="col-span-3 md:col-span-2 mono text-xs tracking-widest uppercase text-kit">{m.d}<br/><span className="text-navy-deep/60">{m.t}</span></p>
-                <p className="col-span-9 md:col-span-6 display text-2xl md:text-4xl text-navy-deep">
-                  {m.h} <span className="text-navy-deep/30">vs.</span> {m.a}
-                </p>
-                <p className="hidden md:block col-span-3 mono text-xs uppercase tracking-widest text-navy-deep/70">{m.v}</p>
-                <p className="col-span-12 md:col-span-1 mono text-[10px] uppercase tracking-widest text-navy-deep/40 md:text-right">{m.code}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* PITCH / VISIT */}
-      <section className="relative bg-navy-deep text-chalk overflow-hidden">
-        <img src={pitch} alt="Seaside Park pitch overlooking the Atlantic" loading="lazy" width={1600} height={1000} className="absolute inset-0 w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-transparent" />
-        <div className="relative mx-auto max-w-[1400px] px-6 py-32 md:py-48 grid md:grid-cols-2 gap-10">
+      {/* EVENTS PREVIEW */}
+      <Section>
+        <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
           <div>
-            <p className="mono text-[10px] tracking-[0.35em] uppercase text-kit">§ 05 · The Pitch</p>
-            <h2 className="display text-5xl md:text-7xl mt-4">Seaside Park.<br/>Wind off the harbor.</h2>
-            <p className="mt-6 max-w-md text-sand/80 text-lg">Ocean Avenue, Marblehead. The best pitch north of Boston, if you don't mind seagulls stealing your snack at halftime.</p>
+            <p className="eyebrow text-crimson">Upcoming Events</p>
+            <h2 className="display text-5xl md:text-6xl text-navy-deep mt-3">Gather. Give. Grow the game.</h2>
           </div>
-          <div className="mono text-xs tracking-widest uppercase text-sand/80 self-end">
-            <p className="border-t-2 border-sand/30 pt-4">Address<br/><span className="text-chalk normal-case text-base tracking-normal font-normal">Ocean Ave, Marblehead MA 01945</span></p>
-            <p className="border-t border-sand/20 pt-4 mt-6">Parking<br/><span className="text-chalk normal-case text-base tracking-normal font-normal">Lot at the causeway. Free Sundays.</span></p>
-            <p className="border-t border-sand/20 pt-4 mt-6">Warmup<br/><span className="text-chalk normal-case text-base tracking-normal font-normal">45 min pre-match. Bring your own ball.</span></p>
+          <Link to="/events" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">All events →</Link>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            { tag: "Fundraiser", title: "World Cup Watch Party & Gear Drive", when: "June 2026 · RIP Tide Lounge", body: "Community gathering with a gear collection for Lynn Youth Soccer. Suggested donation at the door; brief remarks at halftime." },
+            { tag: "Community", title: "End-of-Season MHD Gathering", when: "TBA · Marblehead", body: "Bringing together OTHSL teams, the broader MHD community, and regional affiliates. Modest fundraiser, gear drive, and end-of-season toast." },
+            { tag: "Board", title: "Public Announcement · Club Formation", when: "Spring 2026", body: "Formal press release introducing MHD FC's mission and inviting the community to become part of it — as members, donors, and volunteers." },
+          ].map((e) => (
+            <article key={e.title} className="border border-navy-deep/15 p-8 bg-cream flex flex-col hover:border-gold transition-colors">
+              <p className="eyebrow text-crimson">{e.tag}</p>
+              <h3 className="display text-2xl text-navy-deep font-semibold mt-3">{e.title}</h3>
+              <p className="mono text-xs tracking-widest uppercase text-navy-soft mt-2">{e.when}</p>
+              <p className="mt-5 text-foreground/75 leading-relaxed flex-1">{e.body}</p>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* GLORY DAYS */}
+      <section className="relative bg-navy-deep text-cream overflow-hidden">
+        <img src={pitch} alt="Historic pitch" loading="lazy" width={1600} height={900} className="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/70 to-navy-deep/60" />
+        <div className="relative mx-auto max-w-[1400px] px-6 py-24">
+          <p className="eyebrow text-gold">Glory Days</p>
+          <h2 className="display text-5xl md:text-6xl mt-3">Moments the club will not forget.</h2>
+          <div className="mt-12 grid md:grid-cols-2 gap-8">
+            <Link to="/glory-days" hash="2001" className="border border-gold/40 p-8 hover:bg-gold hover:text-navy-deep transition-colors group">
+              <p className="eyebrow text-gold group-hover:text-navy-deep">Silverware · 2001</p>
+              <p className="display text-3xl mt-3">BSSL Cup Final</p>
+              <p className="mt-3 text-cream/75 group-hover:text-navy-deep/80">The club's inaugural piece of silverware. A season that put MHD on the North Shore map.</p>
+            </Link>
+            <Link to="/glory-days" hash="2018" className="border border-gold/40 p-8 hover:bg-gold hover:text-navy-deep transition-colors group">
+              <p className="eyebrow text-gold group-hover:text-navy-deep">National Stage · 2018</p>
+              <p className="display text-3xl mt-3">US Open Cup</p>
+              <p className="mt-3 text-cream/75 group-hover:text-navy-deep/80">MHD FC's entry into the oldest cup competition in American football. A run the whole town turned out for.</p>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-kit text-chalk py-20 md:py-28">
-        <div className="mx-auto max-w-[1400px] px-6 grid md:grid-cols-2 gap-10 items-center">
-          <h2 className="display text-5xl md:text-7xl">Turning 40 soon?<br/>Bring your boots.</h2>
-          <div className="md:text-right">
-            <p className="max-w-md md:ml-auto text-chalk/90">Two trial sessions, no fee. If it clicks, you're in — dues cover kit, league fees, and the ref. That's it.</p>
-            <Link to="/join" className="inline-flex items-center gap-3 mt-8 bg-navy-deep text-chalk px-8 py-5 mono text-sm tracking-[0.3em] uppercase hover:bg-black transition-colors">
-              Request a Trial ▸
+      <section className="bg-gold text-navy-deep py-20">
+        <div className="mx-auto max-w-[1400px] px-6 grid md:grid-cols-12 gap-10 items-center">
+          <div className="md:col-span-8">
+            <p className="eyebrow">Get involved</p>
+            <h2 className="display text-4xl md:text-6xl mt-3 font-semibold">Play, coach, sponsor, or simply support the mission.</h2>
+          </div>
+          <div className="md:col-span-4 md:text-right">
+            <Link to="/contact" className="inline-block bg-navy-deep text-cream px-8 py-4 font-semibold tracking-wide hover:bg-crimson transition-colors">
+              Contact the Club →
             </Link>
           </div>
         </div>
