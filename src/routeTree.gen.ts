@@ -9,18 +9,78 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ScheduleRouteImport } from './routes/schedule'
-import { Route as JoinRouteImport } from './routes/join'
+import { Route as TeamsRouteImport } from './routes/teams'
+import { Route as StoreRouteImport } from './routes/store'
+import { Route as PhotosRouteImport } from './routes/photos'
+import { Route as NewsRouteImport } from './routes/news'
+import { Route as HonorsRouteImport } from './routes/honors'
+import { Route as HistoryRouteImport } from './routes/history'
+import { Route as GloryDaysRouteImport } from './routes/glory-days'
+import { Route as EventsRouteImport } from './routes/events'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CommitteeRouteImport } from './routes/committee'
+import { Route as BylawsRouteImport } from './routes/bylaws'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
-const ScheduleRoute = ScheduleRouteImport.update({
-  id: '/schedule',
-  path: '/schedule',
+const TeamsRoute = TeamsRouteImport.update({
+  id: '/teams',
+  path: '/teams',
   getParentRoute: () => rootRouteImport,
 } as any)
-const JoinRoute = JoinRouteImport.update({
-  id: '/join',
-  path: '/join',
+const StoreRoute = StoreRouteImport.update({
+  id: '/store',
+  path: '/store',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhotosRoute = PhotosRouteImport.update({
+  id: '/photos',
+  path: '/photos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HonorsRoute = HonorsRouteImport.update({
+  id: '/honors',
+  path: '/honors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GloryDaysRoute = GloryDaysRouteImport.update({
+  id: '/glory-days',
+  path: '/glory-days',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommitteeRoute = CommitteeRouteImport.update({
+  id: '/committee',
+  path: '/committee',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BylawsRoute = BylawsRouteImport.update({
+  id: '/bylaws',
+  path: '/bylaws',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,48 +91,198 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/join': typeof JoinRoute
-  '/schedule': typeof ScheduleRoute
+  '/about': typeof AboutRoute
+  '/bylaws': typeof BylawsRoute
+  '/committee': typeof CommitteeRoute
+  '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
+  '/glory-days': typeof GloryDaysRoute
+  '/history': typeof HistoryRoute
+  '/honors': typeof HonorsRoute
+  '/news': typeof NewsRoute
+  '/photos': typeof PhotosRoute
+  '/store': typeof StoreRoute
+  '/teams': typeof TeamsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/join': typeof JoinRoute
-  '/schedule': typeof ScheduleRoute
+  '/about': typeof AboutRoute
+  '/bylaws': typeof BylawsRoute
+  '/committee': typeof CommitteeRoute
+  '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
+  '/glory-days': typeof GloryDaysRoute
+  '/history': typeof HistoryRoute
+  '/honors': typeof HonorsRoute
+  '/news': typeof NewsRoute
+  '/photos': typeof PhotosRoute
+  '/store': typeof StoreRoute
+  '/teams': typeof TeamsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/join': typeof JoinRoute
-  '/schedule': typeof ScheduleRoute
+  '/about': typeof AboutRoute
+  '/bylaws': typeof BylawsRoute
+  '/committee': typeof CommitteeRoute
+  '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
+  '/glory-days': typeof GloryDaysRoute
+  '/history': typeof HistoryRoute
+  '/honors': typeof HonorsRoute
+  '/news': typeof NewsRoute
+  '/photos': typeof PhotosRoute
+  '/store': typeof StoreRoute
+  '/teams': typeof TeamsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/join' | '/schedule'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/bylaws'
+    | '/committee'
+    | '/contact'
+    | '/events'
+    | '/glory-days'
+    | '/history'
+    | '/honors'
+    | '/news'
+    | '/photos'
+    | '/store'
+    | '/teams'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/join' | '/schedule'
-  id: '__root__' | '/' | '/join' | '/schedule'
+  to:
+    | '/'
+    | '/about'
+    | '/bylaws'
+    | '/committee'
+    | '/contact'
+    | '/events'
+    | '/glory-days'
+    | '/history'
+    | '/honors'
+    | '/news'
+    | '/photos'
+    | '/store'
+    | '/teams'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/bylaws'
+    | '/committee'
+    | '/contact'
+    | '/events'
+    | '/glory-days'
+    | '/history'
+    | '/honors'
+    | '/news'
+    | '/photos'
+    | '/store'
+    | '/teams'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  JoinRoute: typeof JoinRoute
-  ScheduleRoute: typeof ScheduleRoute
+  AboutRoute: typeof AboutRoute
+  BylawsRoute: typeof BylawsRoute
+  CommitteeRoute: typeof CommitteeRoute
+  ContactRoute: typeof ContactRoute
+  EventsRoute: typeof EventsRoute
+  GloryDaysRoute: typeof GloryDaysRoute
+  HistoryRoute: typeof HistoryRoute
+  HonorsRoute: typeof HonorsRoute
+  NewsRoute: typeof NewsRoute
+  PhotosRoute: typeof PhotosRoute
+  StoreRoute: typeof StoreRoute
+  TeamsRoute: typeof TeamsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/schedule': {
-      id: '/schedule'
-      path: '/schedule'
-      fullPath: '/schedule'
-      preLoaderRoute: typeof ScheduleRouteImport
+    '/teams': {
+      id: '/teams'
+      path: '/teams'
+      fullPath: '/teams'
+      preLoaderRoute: typeof TeamsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/join': {
-      id: '/join'
-      path: '/join'
-      fullPath: '/join'
-      preLoaderRoute: typeof JoinRouteImport
+    '/store': {
+      id: '/store'
+      path: '/store'
+      fullPath: '/store'
+      preLoaderRoute: typeof StoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/photos': {
+      id: '/photos'
+      path: '/photos'
+      fullPath: '/photos'
+      preLoaderRoute: typeof PhotosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/honors': {
+      id: '/honors'
+      path: '/honors'
+      fullPath: '/honors'
+      preLoaderRoute: typeof HonorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glory-days': {
+      id: '/glory-days'
+      path: '/glory-days'
+      fullPath: '/glory-days'
+      preLoaderRoute: typeof GloryDaysRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/committee': {
+      id: '/committee'
+      path: '/committee'
+      fullPath: '/committee'
+      preLoaderRoute: typeof CommitteeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bylaws': {
+      id: '/bylaws'
+      path: '/bylaws'
+      fullPath: '/bylaws'
+      preLoaderRoute: typeof BylawsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,8 +297,18 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  JoinRoute: JoinRoute,
-  ScheduleRoute: ScheduleRoute,
+  AboutRoute: AboutRoute,
+  BylawsRoute: BylawsRoute,
+  CommitteeRoute: CommitteeRoute,
+  ContactRoute: ContactRoute,
+  EventsRoute: EventsRoute,
+  GloryDaysRoute: GloryDaysRoute,
+  HistoryRoute: HistoryRoute,
+  HonorsRoute: HonorsRoute,
+  NewsRoute: NewsRoute,
+  PhotosRoute: PhotosRoute,
+  StoreRoute: StoreRoute,
+  TeamsRoute: TeamsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
