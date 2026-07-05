@@ -42,139 +42,176 @@ export function Crest({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 64 72" className={className} aria-hidden>
       <path d="M32 2 L60 12 V38 C60 54 46 66 32 70 C18 66 4 54 4 38 V12 Z"
-        fill="var(--navy-deep)" stroke="var(--gold)" strokeWidth="1.5" />
+        fill="var(--ink)" stroke="var(--gold)" strokeWidth="1.5" />
       <path d="M32 8 L54 16 V38 C54 50 43 60 32 63 C21 60 10 50 10 38 V16 Z"
         fill="none" stroke="var(--gold)" strokeWidth="0.5" opacity="0.6" />
-      <text x="32" y="30" textAnchor="middle" fontFamily="Cormorant Garamond, serif"
-        fontSize="14" fontWeight="600" fill="var(--gold)" letterSpacing="1">MHD</text>
+      <text x="32" y="30" textAnchor="middle" fontFamily="Anton, Impact, sans-serif"
+        fontSize="15" fill="var(--gold)" letterSpacing="1">MHD</text>
       <line x1="14" y1="35" x2="50" y2="35" stroke="var(--gold)" strokeWidth="0.5" />
-      <text x="32" y="46" textAnchor="middle" fontFamily="Cormorant Garamond, serif"
-        fontSize="7" fill="var(--gold)" letterSpacing="1.5">FC</text>
-      <text x="32" y="56" textAnchor="middle" fontFamily="Inter, sans-serif"
-        fontSize="4" fill="var(--gold-soft)" letterSpacing="1">EST · MMI</text>
+      <text x="32" y="46" textAnchor="middle" fontFamily="Anton, Impact, sans-serif"
+        fontSize="8" fill="var(--gold)" letterSpacing="1.5">FC</text>
+      <text x="32" y="56" textAnchor="middle" fontFamily="JetBrains Mono, monospace"
+        fontSize="3.6" fill="var(--gold-soft)" letterSpacing="1">EST · MMI</text>
     </svg>
   );
 }
 
 export function Nav() {
-  const [open, setOpen] = useState<string | null>(null);
-  const [mobile, setMobile] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
-      <div className="bg-navy-deep text-cream/80 border-b border-gold/20">
-        <div className="mx-auto max-w-[1400px] px-6 h-8 flex items-center justify-between text-[11px]">
-          <span className="mono tracking-widest">A Massachusetts 501(c)(3) Nonprofit Soccer Club</span>
+      {/* Top strip */}
+      <div className="bg-ink text-cream/75 border-b border-gold/20">
+        <div className="mx-auto max-w-[1600px] px-6 h-8 flex items-center justify-between mono text-[10px] tracking-[0.3em] uppercase">
+          <span>Marblehead · MA · 501(c)(3) Nonprofit Football Club</span>
           <Link to="/contact" className="hidden sm:inline hover:text-gold transition-colors">
-            Donate · Support the Mission →
+            Support the Mission →
           </Link>
         </div>
       </div>
-      <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-navy-deep/10">
-        <div className="mx-auto max-w-[1400px] px-6 h-20 flex items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-3 text-navy-deep">
-            <Crest className="w-11 h-12" />
-            <div className="leading-tight">
-              <div className="display text-xl font-semibold">Marblehead Football Club</div>
-              <div className="mono text-[9px] tracking-[0.3em] uppercase text-navy-soft">Est. 2001 · North Shore, MA</div>
-            </div>
+
+      {/* Primary bar: left wordmark · center crest · right MENU */}
+      <header className="sticky top-0 z-50 bg-background border-b border-ink/15">
+        <div className="mx-auto max-w-[1600px] px-4 md:px-6 h-16 md:h-20 grid grid-cols-[1fr_auto_1fr] items-center">
+          <Link to="/" className="justify-self-start mono text-[11px] md:text-[13px] tracking-[0.28em] uppercase text-ink hover:text-crimson transition-colors font-semibold">
+            <span className="hidden md:inline">Marblehead Football Club</span>
+            <span className="md:hidden">MHD FC</span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1 text-[13px] font-medium text-navy-deep">
-            {NAV.map((item) => (
-              <div key={item.label} className="relative"
-                onMouseEnter={() => item.children && setOpen(item.label)}
-                onMouseLeave={() => setOpen(null)}>
-                {item.to ? (
-                  <Link to={item.to} className="px-3 py-2 hover:text-crimson transition-colors"
-                    activeOptions={item.to === "/" ? { exact: true } : undefined}
-                    activeProps={{ className: "text-crimson" }}>
-                    {item.label}
-                  </Link>
-                ) : (
-                  <button className="px-3 py-2 hover:text-crimson transition-colors flex items-center gap-1">
-                    {item.label} <span className="text-[8px]">▼</span>
-                  </button>
-                )}
-                {item.children && open === item.label && (
-                  <div className="absolute top-full left-0 min-w-[220px] bg-cream border border-navy-deep/10 shadow-lg py-2">
-                    {item.children.map((c) => (
-                      <a key={c.label} href={c.to} className="block px-4 py-2 text-navy-deep hover:bg-parchment hover:text-crimson transition-colors">
-                        {c.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
+          <Link to="/" aria-label="MHD FC — home" className="justify-self-center">
+            <Crest className="w-11 h-12 md:w-12 md:h-14" />
+          </Link>
 
-          <button onClick={() => setMobile(!mobile)} className="lg:hidden text-navy-deep p-2" aria-label="Menu">
-            <span className="block w-6 h-0.5 bg-navy-deep mb-1.5" />
-            <span className="block w-6 h-0.5 bg-navy-deep mb-1.5" />
-            <span className="block w-6 h-0.5 bg-navy-deep" />
-          </button>
+          <div className="justify-self-end flex items-center gap-3">
+            <span className="hidden md:inline mono text-[10px] tracking-[0.3em] uppercase text-navy-soft">EN</span>
+            <button
+              onClick={() => setMenuOpen(true)}
+              className="mono text-[11px] md:text-[13px] tracking-[0.28em] uppercase font-semibold border border-ink px-4 py-2 md:px-5 md:py-2.5 hover:bg-ink hover:text-cream transition-colors"
+              aria-label="Open menu"
+            >
+              Menu
+            </button>
+          </div>
         </div>
 
-        {mobile && (
-          <div className="lg:hidden border-t border-navy-deep/10 bg-cream max-h-[70vh] overflow-y-auto">
-            {NAV.map((item) => (
-              <div key={item.label} className="border-b border-navy-deep/10">
-                {item.to ? (
-                  <Link to={item.to} className="block px-6 py-3 text-navy-deep font-medium" onClick={() => setMobile(false)}>
-                    {item.label}
-                  </Link>
-                ) : (
-                  <>
-                    <div className="px-6 py-3 eyebrow text-navy-soft">{item.label}</div>
-                    {item.children?.map((c) => (
-                      <a key={c.label} href={c.to} className="block px-8 py-2 text-navy-deep text-sm" onClick={() => setMobile(false)}>
-                        {c.label}
-                      </a>
-                    ))}
-                  </>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
-
         {/* Recruiting bar */}
-        <div className="bg-crimson text-cream">
-          <div className="mx-auto max-w-[1400px] px-6 py-2 flex items-center justify-between gap-4 text-[12px]">
+        <div className="bg-gold text-ink border-t border-ink/10">
+          <div className="mx-auto max-w-[1600px] px-6 py-2 flex items-center justify-between gap-4 mono text-[10px] md:text-[11px] tracking-[0.3em] uppercase">
             <span className="flex items-center gap-2">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="eyebrow">Now Recruiting for the 2025 Season</span>
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-crimson animate-pulse" />
+              <span>Now Recruiting · 2025 Season</span>
             </span>
-            <Link to="/contact" className="hidden sm:inline underline underline-offset-4 decoration-gold hover:text-gold">
-              Register your interest →
+            <Link to="/contact" className="hidden sm:inline underline underline-offset-4 decoration-ink/50 hover:decoration-ink">
+              Register interest →
             </Link>
           </div>
         </div>
       </header>
+
+      {/* Fullscreen overlay menu — SF City-style */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-[100] bg-ink text-cream overflow-y-auto">
+          <div className="mx-auto max-w-[1600px] px-6 py-6">
+            <div className="grid grid-cols-[1fr_auto_1fr] items-center">
+              <span className="mono text-[11px] md:text-[13px] tracking-[0.28em] uppercase text-cream/80 font-semibold">Marblehead Football Club</span>
+              <Crest className="w-11 h-12 justify-self-center" />
+              <button
+                onClick={() => setMenuOpen(false)}
+                className="justify-self-end mono text-[11px] md:text-[13px] tracking-[0.28em] uppercase font-semibold border border-gold text-gold px-4 py-2 md:px-5 md:py-2.5 hover:bg-gold hover:text-ink transition-colors"
+              >
+                Close ✕
+              </button>
+            </div>
+          </div>
+
+          <div className="mx-auto max-w-[1600px] px-6 py-10 md:py-16 grid md:grid-cols-12 gap-10">
+            <nav className="md:col-span-8 space-y-1">
+              {NAV.map((item) => (
+                <div key={item.label} className="border-b border-cream/10 py-3">
+                  {item.to ? (
+                    <Link
+                      to={item.to}
+                      onClick={() => setMenuOpen(false)}
+                      className="mega-display text-5xl md:text-7xl hover:text-gold transition-colors block"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <>
+                      <p className="mega-display text-5xl md:text-7xl text-cream/95">{item.label}</p>
+                      <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1">
+                        {item.children?.map((c) => (
+                          <a
+                            key={c.label}
+                            href={c.to}
+                            onClick={() => setMenuOpen(false)}
+                            className="mono text-[11px] tracking-[0.24em] uppercase text-cream/60 hover:text-gold transition-colors"
+                          >
+                            {c.label}
+                          </a>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              ))}
+            </nav>
+
+            <aside className="md:col-span-4 space-y-8">
+              <div>
+                <p className="eyebrow text-gold">Contact</p>
+                <p className="mt-3 text-cream/85">info@mhdfc.org<br />Marblehead, MA 01945</p>
+              </div>
+              <div>
+                <p className="eyebrow text-gold">Partners</p>
+                <ul className="mt-3 space-y-1 text-cream/85">
+                  <li>Lynn Youth Soccer</li>
+                  <li>North Shore Soccer Academy</li>
+                  <li>OTHSL</li>
+                  <li>068 Beverly</li>
+                </ul>
+              </div>
+              <Link
+                to="/contact"
+                onClick={() => setMenuOpen(false)}
+                className="inline-block mono text-[11px] tracking-[0.28em] uppercase font-semibold bg-gold text-ink px-6 py-3 hover:bg-cream transition-colors"
+              >
+                Donate & Support →
+              </Link>
+            </aside>
+          </div>
+        </div>
+      )}
     </>
   );
 }
 
 export function PageHeader({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle?: string }) {
   return (
-    <section className="bg-navy-deep text-cream border-b-4 border-gold">
-      <div className="mx-auto max-w-[1400px] px-6 py-20 md:py-28">
-        <p className="eyebrow text-gold">{eyebrow}</p>
-        <h1 className="display text-5xl md:text-7xl mt-4 max-w-4xl">{title}</h1>
-        {subtitle && <p className="mt-6 max-w-2xl text-cream/75 text-lg leading-relaxed">{subtitle}</p>}
+    <section className="bg-background border-b border-ink/15">
+      <div className="mx-auto max-w-[1600px] px-6 pt-16 pb-10 md:pt-24 md:pb-16">
+        <p className="eyebrow text-crimson">{eyebrow}</p>
+        <h1 className="mega-display text-[clamp(3.5rem,14vw,12rem)] text-ink mt-6">{title}</h1>
+        {subtitle && (
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/80">{subtitle}</p>
+        )}
       </div>
     </section>
   );
 }
 
 export function Section({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <section className={`py-20 md:py-24 ${className}`}><div className="mx-auto max-w-[1400px] px-6">{children}</div></section>;
+  return (
+    <section className={`py-20 md:py-24 ${className}`}>
+      <div className="mx-auto max-w-[1600px] px-6">{children}</div>
+    </section>
+  );
 }
 
 export function Footer() {
   return (
-    <footer className="bg-navy-deep text-cream/70 border-t-4 border-gold">
+    <footer className="bg-ink text-cream/70 border-t-4 border-gold">
       <div className="overflow-hidden ticker-mask border-b border-cream/10 py-4">
         <div className="flex gap-16 mono text-[11px] tracking-[0.3em] uppercase whitespace-nowrap animate-marquee text-gold/80">
           {Array.from({ length: 2 }).flatMap((_, i) => [
@@ -188,36 +225,42 @@ export function Footer() {
           ].map((t, j) => (<span key={`${i}-${j}`}>◆ {t}</span>)))}
         </div>
       </div>
-      <div className="mx-auto max-w-[1400px] px-6 py-16 grid md:grid-cols-4 gap-10">
-        <div className="md:col-span-2">
-          <div className="flex items-center gap-3">
-            <Crest className="w-14 h-16" />
-            <div>
-              <p className="display text-2xl text-cream font-semibold">Marblehead Football Club</p>
-              <p className="eyebrow text-gold mt-1">MHD FC · Est. 2001</p>
+
+      <div className="mx-auto max-w-[1600px] px-6 py-20">
+        <p className="mega-display text-[clamp(3rem,10vw,9rem)] text-cream leading-[0.85]">
+          Marblehead<br />
+          <span className="text-gold">Football Club</span>
+        </p>
+
+        <div className="mt-16 grid md:grid-cols-4 gap-10">
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-3">
+              <Crest className="w-12 h-14" />
+              <p className="mono text-[11px] tracking-[0.3em] uppercase text-cream/70">MHD FC · Est. 2001</p>
             </div>
+            <p className="mt-6 max-w-md leading-relaxed">
+              A nonprofit soccer club serving the North Shore of Massachusetts. Our mission is to grow the game, foster community, and expand access for players who might otherwise be left on the sideline.
+            </p>
           </div>
-          <p className="mt-6 max-w-md leading-relaxed">
-            A nonprofit soccer club serving the North Shore of Massachusetts. Our mission is to grow the game, foster community, and expand access for players who might otherwise be left on the sideline.
-          </p>
-        </div>
-        <div>
-          <p className="eyebrow text-gold mb-4">Contact</p>
-          <p className="text-cream">info@mhdfc.org<br/>Marblehead, MA 01945</p>
-          <p className="mt-4 mono text-xs">Banking: National Grand Bank</p>
-        </div>
-        <div>
-          <p className="eyebrow text-gold mb-4">Partners</p>
-          <ul className="space-y-1.5 text-cream">
-            <li>Lynn Youth Soccer</li>
-            <li>North Shore Soccer Academy</li>
-            <li>OTHSL — Over-the-Hill League</li>
-            <li>068 Beverly</li>
-          </ul>
+          <div>
+            <p className="eyebrow text-gold mb-4">Contact</p>
+            <p className="text-cream">info@mhdfc.org<br />Marblehead, MA 01945</p>
+            <p className="mt-4 mono text-xs">Banking · National Grand Bank</p>
+          </div>
+          <div>
+            <p className="eyebrow text-gold mb-4">Partners</p>
+            <ul className="space-y-1.5 text-cream">
+              <li>Lynn Youth Soccer</li>
+              <li>North Shore Soccer Academy</li>
+              <li>OTHSL — Over-the-Hill League</li>
+              <li>068 Beverly</li>
+            </ul>
+          </div>
         </div>
       </div>
+
       <div className="border-t border-cream/10">
-        <div className="mx-auto max-w-[1400px] px-6 py-5 flex flex-wrap justify-between gap-3 mono text-[10px] tracking-[0.25em] uppercase text-cream/40">
+        <div className="mx-auto max-w-[1600px] px-6 py-5 flex flex-wrap justify-between gap-3 mono text-[10px] tracking-[0.25em] uppercase text-cream/40">
           <span>© {new Date().getFullYear()} Marblehead Football Club · 501(c)(3) Nonprofit</span>
           <span>All donations tax-deductible where applicable</span>
         </div>

@@ -23,38 +23,47 @@ function Home() {
     <div className="bg-background text-foreground">
       <Nav />
 
-      {/* HERO */}
-      <section className="relative bg-navy-deep text-cream overflow-hidden">
-        <img src={hero} alt="MHD FC match action" width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover opacity-35" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/50 to-navy-deep" />
-        <div className="relative mx-auto max-w-[1400px] px-6 py-28 md:py-40 grid md:grid-cols-12 gap-10 items-center">
-          <div className="md:col-span-8">
-            <p className="eyebrow text-gold">A Nonprofit Football Club · Est. 2001</p>
-            <h1 className="display text-[clamp(3rem,8vw,7rem)] mt-5 leading-[0.95] font-medium">
-              Football for the <em className="text-gold not-italic">community</em> — on the North Shore, since 2001.
+      {/* HERO — editorial, overlapping display type + photo */}
+      <section className="relative bg-background overflow-hidden border-b border-ink/15">
+        <div className="mx-auto max-w-[1600px] px-6 pt-12 pb-24 md:pt-16 md:pb-32">
+          <div className="flex items-center gap-4 mono text-[11px] tracking-[0.3em] uppercase text-navy-soft">
+            <span className="w-8 h-px bg-crimson" />
+            <span>A Nonprofit Football Club · Est. 2001 · North Shore, MA</span>
+          </div>
+
+          <div className="relative mt-8 md:mt-12">
+            {/* Image block sits behind and to the left */}
+            <div className="absolute left-0 top-[38%] md:top-[42%] w-[54%] md:w-[42%] aspect-[4/5] overflow-hidden z-0 shadow-2xl">
+              <img src={hero} alt="MHD FC match action" width={1200} height={1500} className="w-full h-full object-cover" />
+            </div>
+
+            {/* Massive stacked wordmark */}
+            <h1 className="relative z-10 mega-display text-ink text-[clamp(4.5rem,18vw,17rem)]">
+              <span className="block">Marblehead</span>
+              <span className="block pl-[18%] md:pl-[28%]">Football</span>
+              <span className="block text-crimson">Club</span>
             </h1>
-            <p className="mt-8 max-w-2xl text-lg text-cream/80 leading-relaxed">
-              Marblehead Football Club is a nonprofit 501(c)(3) fielding three teams and running programs that expand access to the game — in partnership with Lynn Youth Soccer and the North Shore Soccer Academy.
+          </div>
+
+          <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-10 items-end">
+            <p className="md:col-span-6 md:col-start-6 text-lg md:text-xl leading-relaxed text-foreground/85">
+              MHD FC is a nonprofit 501(c)(3) fielding three senior teams and running programs that expand access to the game — in partnership with <strong>Lynn Youth Soccer</strong> and the <strong>North Shore Soccer Academy</strong>.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link to="/about" className="bg-gold text-navy-deep px-7 py-3.5 font-semibold text-sm tracking-wide hover:bg-cream transition-colors">
+            <div className="md:col-span-12 flex flex-wrap items-center gap-4 mt-4">
+              <Link to="/about" className="mono text-[11px] tracking-[0.28em] uppercase font-semibold bg-ink text-cream px-7 py-4 hover:bg-crimson transition-colors">
                 Our Mission
               </Link>
-              <Link to="/contact" className="border border-gold/60 text-cream px-7 py-3.5 font-semibold text-sm tracking-wide hover:bg-gold hover:text-navy-deep transition-colors">
+              <Link to="/contact" className="mono text-[11px] tracking-[0.28em] uppercase font-semibold border border-ink text-ink px-7 py-4 hover:bg-gold transition-colors">
                 Donate & Support
               </Link>
-              <Link to="/teams" className="text-cream/80 text-sm underline underline-offset-8 decoration-gold/60 hover:text-gold">
+              <Link to="/teams" className="mono text-[11px] tracking-[0.28em] uppercase text-ink underline underline-offset-8 decoration-crimson hover:text-crimson">
                 Meet the three teams →
               </Link>
             </div>
           </div>
-          <div className="md:col-span-4 justify-self-center md:justify-self-end">
-            <div className="crest-frame p-8 bg-navy-deep/60 backdrop-blur-sm">
-              <Crest className="w-40 h-48" />
-            </div>
-          </div>
         </div>
       </section>
+
 
       {/* MISSION STRIP */}
       <section className="bg-cream border-b border-navy-deep/10">
