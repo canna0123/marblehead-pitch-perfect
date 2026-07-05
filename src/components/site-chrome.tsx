@@ -58,6 +58,7 @@ export function Crest({ className = "" }: { className?: string }) {
 
 export function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState<string | null>(null);
 
   return (
     <>
@@ -94,6 +95,48 @@ export function Nav() {
             </button>
           </div>
         </div>
+
+        {/* Horizontal section nav with dropdowns */}
+        <nav className="hidden lg:block border-t border-ink/10 bg-background">
+          <div className="mx-auto max-w-[1600px] px-6 flex items-center justify-center gap-1 mono text-[11px] tracking-[0.24em] uppercase font-semibold text-ink">
+            {NAV.map((item) => (
+              <div
+                key={item.label}
+                className="relative"
+                onMouseEnter={() => item.children && setOpen(item.label)}
+                onMouseLeave={() => setOpen(null)}
+              >
+                {item.to ? (
+                  <Link
+                    to={item.to}
+                    className="px-4 py-3 inline-block hover:text-crimson transition-colors"
+                    activeOptions={item.to === "/" ? { exact: true } : undefined}
+                    activeProps={{ className: "text-crimson" }}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button className="px-4 py-3 hover:text-crimson transition-colors flex items-center gap-1.5">
+                    {item.label} <span className="text-[7px] opacity-60">▼</span>
+                  </button>
+                )}
+                {item.children && open === item.label && (
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 min-w-[240px] bg-ink text-cream border border-gold/30 py-2 shadow-2xl z-40">
+                    {item.children.map((c) => (
+                      <a
+                        key={c.label}
+                        href={c.to}
+                        className="block px-5 py-2.5 hover:bg-gold hover:text-ink transition-colors"
+                      >
+                        {c.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </nav>
 
         {/* Recruiting bar */}
         <div className="bg-gold text-ink border-t border-ink/10">
