@@ -5,18 +5,20 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ============================================================
-   MARBLEHEAD FOOTBALL CLUB (MHD FC) — nonprofit / heritage
-   Classic navy + antique gold + cream palette
+   MARBLEHEAD FOOTBALL CLUB (MHD FC)
+   Editorial club aesthetic — cream + ink + club yellow + crimson
+   Modeled on modern club identities (SF City FC school of design)
    ============================================================ */
 
 @theme inline {
-  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-display: "Anton", "Oswald", "Impact", sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --radius-sm: 2px;
-  --radius-md: 3px;
-  --radius-lg: 4px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 2px;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -31,14 +33,14 @@
   --color-ink: var(--ink);
   --color-line: var(--line);
 
-  --color-primary: var(--navy-deep);
+  --color-primary: var(--ink);
   --color-primary-foreground: var(--cream);
   --color-secondary: var(--gold);
-  --color-secondary-foreground: var(--navy-deep);
+  --color-secondary-foreground: var(--ink);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--gold-soft);
-  --color-accent-foreground: var(--navy-deep);
+  --color-accent-foreground: var(--ink);
   --color-border: var(--line);
   --color-input: var(--line);
   --color-ring: var(--gold);
@@ -51,22 +53,22 @@
 }
 
 :root {
-  --background: oklch(0.975 0.008 85);         /* warm parchment */
-  --foreground: oklch(0.18 0.03 250);
-  --ink: oklch(0.14 0.02 250);
-  --navy: oklch(0.28 0.06 255);
-  --navy-deep: oklch(0.18 0.05 255);
-  --navy-soft: oklch(0.38 0.05 255);
-  --cream: oklch(0.97 0.012 85);
-  --parchment: oklch(0.93 0.02 82);
-  --gold: oklch(0.68 0.11 78);                 /* antique gold */
-  --gold-soft: oklch(0.82 0.06 82);
-  --crimson: oklch(0.45 0.16 25);              /* deep club red */
-  --line: oklch(0.18 0.03 250 / 0.14);
-  --muted: oklch(0.93 0.015 82);
-  --muted-foreground: oklch(0.38 0.02 250);
-  --card: oklch(0.985 0.006 85);
-  --radius: 3px;
+  --background: oklch(0.955 0.012 85);         /* warm cream/off-white */
+  --foreground: oklch(0.14 0.005 250);
+  --ink: oklch(0.10 0.005 250);                /* near-black */
+  --navy: oklch(0.20 0.03 255);
+  --navy-deep: oklch(0.12 0.02 255);            /* deep ink-navy */
+  --navy-soft: oklch(0.36 0.02 250);
+  --cream: oklch(0.965 0.014 85);
+  --parchment: oklch(0.92 0.02 82);
+  --gold: oklch(0.80 0.16 88);                  /* club yellow/gold */
+  --gold-soft: oklch(0.88 0.10 88);
+  --crimson: oklch(0.52 0.20 27);               /* stadium seat red */
+  --line: oklch(0.10 0.005 250 / 0.14);
+  --muted: oklch(0.92 0.015 82);
+  --muted-foreground: oklch(0.36 0.01 250);
+  --card: oklch(0.985 0.008 85);
+  --radius: 0px;
 }
 
 @layer base {
@@ -80,21 +82,27 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  h1, h2, h3, h4, .display, .serif {
+  h1, h2, h3, h4, .display {
     font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 0.86;
+    text-transform: uppercase;
+  }
+  .serif {
+    font-family: var(--font-serif);
     font-weight: 500;
     letter-spacing: -0.01em;
-    line-height: 1.05;
   }
   .mono, code, kbd, samp {
     font-family: var(--font-mono);
     font-feature-settings: "tnum" 1, "zero" 1;
   }
   .eyebrow {
-    font-family: var(--font-body);
-    font-weight: 600;
+    font-family: var(--font-mono);
+    font-weight: 500;
     font-size: 11px;
-    letter-spacing: 0.24em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
   }
 }
@@ -116,6 +124,14 @@
   border: 1px solid var(--gold);
   outline: 1px solid var(--gold);
   outline-offset: 4px;
+}
+
+@utility mega-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.82;
+  letter-spacing: -0.01em;
 }
 
 @utility ticker-mask {
