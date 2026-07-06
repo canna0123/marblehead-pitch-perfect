@@ -158,52 +158,8 @@ function Home() {
         </div>
       </section>
 
-      {/* EVENTS PREVIEW */}
-      <Section>
-        <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
-          <div>
-            <p className="eyebrow text-crimson">Upcoming Events</p>
-            <h2 className="display text-5xl md:text-6xl text-navy-deep mt-3">Gather. Give. Grow the game.</h2>
-          </div>
-          <Link to="/events" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">All events →</Link>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { tag: "Fundraiser", title: "World Cup Watch Party & Gear Drive", when: "June 2026 · RIP Tide Lounge", body: "Community gathering with a gear collection for Lynn Youth Soccer. Suggested donation at the door; brief remarks at halftime." },
-            { tag: "Community", title: "End-of-Season MHD Gathering", when: "TBA · Marblehead", body: "Bringing together OTHSL teams, the broader MHD community, and regional affiliates. Modest fundraiser, gear drive, and end-of-season toast." },
-            { tag: "Board", title: "Public Announcement · Club Formation", when: "Spring 2026", body: "Formal press release introducing MHD FC's mission and inviting the community to become part of it — as members, donors, and volunteers." },
-          ].map((e) => (
-            <article key={e.title} className="border border-navy-deep/15 p-8 bg-cream flex flex-col hover:border-gold transition-colors">
-              <p className="eyebrow text-crimson">{e.tag}</p>
-              <h3 className="display text-2xl text-navy-deep font-semibold mt-3">{e.title}</h3>
-              <p className="mono text-xs tracking-widest uppercase text-navy-soft mt-2">{e.when}</p>
-              <p className="mt-5 text-foreground/75 leading-relaxed flex-1">{e.body}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
 
-      {/* GLORY DAYS */}
-      <section className="relative bg-navy-deep text-cream overflow-hidden">
-        <img src={pitch} alt="Historic pitch" loading="lazy" width={1600} height={900} className="absolute inset-0 w-full h-full object-cover opacity-25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/70 to-navy-deep/60" />
-        <div className="relative mx-auto max-w-[1400px] px-6 py-24">
-          <p className="eyebrow text-gold">Glory Days</p>
-          <h2 className="display text-5xl md:text-6xl mt-3">Moments the club will not forget.</h2>
-          <div className="mt-12 grid md:grid-cols-2 gap-8">
-            <Link to="/glory-days" hash="2001" className="border border-gold/40 p-8 hover:bg-gold hover:text-navy-deep transition-colors group">
-              <p className="eyebrow text-gold group-hover:text-navy-deep">Silverware · 2001</p>
-              <p className="display text-3xl mt-3">BSSL Cup Final</p>
-              <p className="mt-3 text-cream/75 group-hover:text-navy-deep/80">The club's inaugural piece of silverware. A season that put MHD on the North Shore map.</p>
-            </Link>
-            <Link to="/glory-days" hash="2018" className="border border-gold/40 p-8 hover:bg-gold hover:text-navy-deep transition-colors group">
-              <p className="eyebrow text-gold group-hover:text-navy-deep">National Stage · 2018</p>
-              <p className="display text-3xl mt-3">US Open Cup</p>
-              <p className="mt-3 text-cream/75 group-hover:text-navy-deep/80">MHD FC's entry into the oldest cup competition in American football. A run the whole town turned out for.</p>
-            </Link>
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA */}
       <section className="bg-gold text-navy-deep py-20">
