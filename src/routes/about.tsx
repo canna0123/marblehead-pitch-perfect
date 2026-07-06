@@ -34,6 +34,29 @@ function About() {
         </div>
       </Section>
 
+      <Section className="bg-cream border-y border-navy-deep/10">
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <p className="eyebrow text-crimson">A Purpose Beyond the Pitch</p>
+            <h2 className="display text-4xl md:text-5xl text-navy-deep mt-4">A club with a purpose beyond the pitch.</h2>
+          </div>
+          <div className="md:col-span-8 space-y-6 text-lg leading-relaxed text-foreground/85">
+            <p>
+              MHD FC was founded to keep competitive adult football alive on the North Shore — and to use the resources of a strong club to open doors for young players in neighboring communities. Today the club fields <strong>three teams</strong> and runs its charitable work in partnership with <strong>Lynn Youth Soccer</strong> and <strong>North Shore Soccer Academy (NSSA)</strong>.
+            </p>
+            <p>
+              Every board member contributes annually. Every dollar raised through gear drives, watch parties, and community events flows directly into scholarships, equipment, and access.
+            </p>
+            <div className="flex flex-wrap gap-6 pt-4">
+              <Link to="/history" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">Read the History →</Link>
+              <Link to="/committee" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">Meet the Committee →</Link>
+              <Link to="/bylaws" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">Club By-Laws →</Link>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+
       <section className="bg-parchment border-y border-navy-deep/10">
         <div className="mx-auto max-w-[1400px] px-6 py-20 grid md:grid-cols-3 gap-10">
           {[
