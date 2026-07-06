@@ -271,11 +271,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1600px] px-6 py-20">
-        <p className="mega-display text-[clamp(3rem,10vw,9rem)] text-cream leading-[0.85]">
-          Marblehead<br />
-          <span className="text-gold">Football Club</span>
-        </p>
+      <div className="mx-auto max-w-[1600px] px-6 py-16">
+
 
         <div className="mt-16 grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
