@@ -272,9 +272,8 @@ export function Footer() {
       </div>
 
       <div className="mx-auto max-w-[1600px] px-6 py-16">
+        <div className="grid md:grid-cols-4 gap-10">
 
-
-        <div className="mt-16 grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
               <Crest className="w-12 h-14" />
