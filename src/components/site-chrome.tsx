@@ -12,7 +12,9 @@ const NAV: { label: string; to?: string; children?: { label: string; to: string 
       { label: "Club Committee", to: "/committee" },
       { label: "Club Honors", to: "/honors" },
       { label: "Individual Honors", to: "/honors#individual" },
+      { label: "Lynn Youth Partnership", to: "/news" },
       { label: "News", to: "/news" },
+
     ],
   },
   { label: "Teams", to: "/teams" },
