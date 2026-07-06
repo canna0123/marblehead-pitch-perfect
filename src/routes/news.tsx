@@ -13,11 +13,18 @@ export const Route = createFileRoute("/news")({
 
 const posts = [
   {
+    date: "2025-03-01",
+    author: "MHD FC Board",
+    tag: "Community Partnership",
+    title: "Together with Lynn Youth Soccer — building a lasting partnership",
+    lede: "Through outreach led by our board and coaches, MHD FC has begun building a lasting partnership with Lynn Youth Soccer — attending tryouts, identifying scholarship candidates for the North Shore Soccer Academy, and expanding access to elite-level training for young players who might not otherwise have the opportunity. Our goal is to name our first cohort of scholarship recipients ahead of the coming season. Milestones: 1st scholarship cohort · ongoing tryout attendance in Lynn · NSSA player-development pathway.",
+  },
+  {
     date: "2025-02-14",
     author: "J. Motoole",
     tag: "President's Update",
-    title: "Lynn Youth Soccer partnership progressing; Watch Party & Gear Drive in planning",
-    lede: "A brief update from the President on the past several weeks: Mike Grubor and Ethan Park have led our engagement with Lynn Youth Soccer, attending tryouts and identifying prospective scholarship recipients for NSSA. Board commitments are in and deposited at National Grand Bank. We're also planning a World Cup watch party with a gear drive at RIP Tide Lounge, and an end-of-season MHD community gathering.",
+    title: "Board commitments deposited; Watch Party & Gear Drive in planning",
+    lede: "A brief update from the President: Mike Grubor and Ethan Park have led our engagement with Lynn Youth Soccer, attending tryouts and identifying prospective scholarship recipients for NSSA. Board commitments are in and deposited at National Grand Bank. We're also planning a World Cup watch party with a gear drive at RIP Tide Lounge, and an end-of-season MHD community gathering.",
   },
   {
     date: "2025-01-08",
@@ -41,6 +48,7 @@ const posts = [
     lede: "The First XI opened the campaign with a spirited 1–1 draw. Match report and gallery to follow.",
   },
 ];
+
 
 function News() {
   return (
