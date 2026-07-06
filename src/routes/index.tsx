@@ -25,35 +25,35 @@ function Home() {
 
       {/* HERO — editorial, overlapping display type + photo */}
       <section className="relative bg-background overflow-hidden border-b border-ink/15">
-        <div className="mx-auto max-w-[1600px] px-6 pt-12 pb-24 md:pt-16 md:pb-32">
+        <div className="mx-auto max-w-[1600px] px-6 pt-8 pb-12 md:pt-12 md:pb-16">
           <div className="flex items-center gap-4 mono text-[11px] tracking-[0.3em] uppercase text-navy-soft">
             <span className="w-8 h-px bg-crimson" />
             <span>A Nonprofit Football Club · Est. 2001 · North Shore, MA</span>
           </div>
 
-          <div className="relative mt-8 md:mt-12">
+          <div className="relative mt-6 md:mt-8">
             {/* Image block sits behind and to the left */}
-            <div className="absolute left-0 top-[38%] md:top-[42%] w-[54%] md:w-[42%] aspect-[4/5] overflow-hidden z-0 shadow-2xl">
+            <div className="absolute left-0 top-[30%] w-[46%] md:w-[34%] aspect-[4/5] overflow-hidden z-0 shadow-2xl">
               <img src={hero} alt="MHD FC match action" width={1200} height={1500} className="w-full h-full object-cover" />
             </div>
 
-            {/* Massive stacked wordmark */}
-            <h1 className="relative z-10 mega-display text-ink text-[clamp(4.5rem,18vw,17rem)]">
+            {/* Stacked wordmark — trimmed */}
+            <h1 className="relative z-10 mega-display text-ink text-[clamp(2.75rem,10vw,9rem)]">
               <span className="block">Marblehead</span>
-              <span className="block pl-[18%] md:pl-[28%]">Football</span>
+              <span className="block pl-[16%] md:pl-[24%]">Football</span>
               <span className="block text-crimson">Club</span>
             </h1>
           </div>
 
-          <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-10 items-end">
-            <p className="md:col-span-6 md:col-start-6 text-lg md:text-xl leading-relaxed text-foreground/85">
+          <div className="mt-10 md:mt-14 grid md:grid-cols-12 gap-8 items-end">
+            <p className="md:col-span-6 md:col-start-6 text-base md:text-lg leading-relaxed text-foreground/85">
               MHD FC is a nonprofit 501(c)(3) fielding three senior teams and running programs that expand access to the game — in partnership with <strong>Lynn Youth Soccer</strong> and the <strong>North Shore Soccer Academy</strong>.
             </p>
-            <div className="md:col-span-12 flex flex-wrap items-center gap-4 mt-4">
-              <Link to="/about" className="mono text-[11px] tracking-[0.28em] uppercase font-semibold bg-ink text-cream px-7 py-4 hover:bg-crimson transition-colors">
+            <div className="md:col-span-12 flex flex-wrap items-center gap-4 mt-2">
+              <Link to="/about" className="mono text-[11px] tracking-[0.28em] uppercase font-semibold bg-ink text-cream px-6 py-3 hover:bg-crimson transition-colors">
                 Our Mission
               </Link>
-              <Link to="/contact" className="mono text-[11px] tracking-[0.28em] uppercase font-semibold border border-ink text-ink px-7 py-4 hover:bg-gold transition-colors">
+              <Link to="/contact" className="mono text-[11px] tracking-[0.28em] uppercase font-semibold border border-ink text-ink px-6 py-3 hover:bg-gold transition-colors">
                 Donate & Support
               </Link>
               <Link to="/teams" className="mono text-[11px] tracking-[0.28em] uppercase text-ink underline underline-offset-8 decoration-crimson hover:text-crimson">
@@ -63,6 +63,7 @@ function Home() {
           </div>
         </div>
       </section>
+
 
 
       {/* MISSION STRIP */}
@@ -157,52 +158,8 @@ function Home() {
         </div>
       </section>
 
-      {/* EVENTS PREVIEW */}
-      <Section>
-        <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
-          <div>
-            <p className="eyebrow text-crimson">Upcoming Events</p>
-            <h2 className="display text-5xl md:text-6xl text-navy-deep mt-3">Gather. Give. Grow the game.</h2>
-          </div>
-          <Link to="/events" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">All events →</Link>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { tag: "Fundraiser", title: "World Cup Watch Party & Gear Drive", when: "June 2026 · RIP Tide Lounge", body: "Community gathering with a gear collection for Lynn Youth Soccer. Suggested donation at the door; brief remarks at halftime." },
-            { tag: "Community", title: "End-of-Season MHD Gathering", when: "TBA · Marblehead", body: "Bringing together OTHSL teams, the broader MHD community, and regional affiliates. Modest fundraiser, gear drive, and end-of-season toast." },
-            { tag: "Board", title: "Public Announcement · Club Formation", when: "Spring 2026", body: "Formal press release introducing MHD FC's mission and inviting the community to become part of it — as members, donors, and volunteers." },
-          ].map((e) => (
-            <article key={e.title} className="border border-navy-deep/15 p-8 bg-cream flex flex-col hover:border-gold transition-colors">
-              <p className="eyebrow text-crimson">{e.tag}</p>
-              <h3 className="display text-2xl text-navy-deep font-semibold mt-3">{e.title}</h3>
-              <p className="mono text-xs tracking-widest uppercase text-navy-soft mt-2">{e.when}</p>
-              <p className="mt-5 text-foreground/75 leading-relaxed flex-1">{e.body}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
 
-      {/* GLORY DAYS */}
-      <section className="relative bg-navy-deep text-cream overflow-hidden">
-        <img src={pitch} alt="Historic pitch" loading="lazy" width={1600} height={900} className="absolute inset-0 w-full h-full object-cover opacity-25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/70 to-navy-deep/60" />
-        <div className="relative mx-auto max-w-[1400px] px-6 py-24">
-          <p className="eyebrow text-gold">Glory Days</p>
-          <h2 className="display text-5xl md:text-6xl mt-3">Moments the club will not forget.</h2>
-          <div className="mt-12 grid md:grid-cols-2 gap-8">
-            <Link to="/glory-days" hash="2001" className="border border-gold/40 p-8 hover:bg-gold hover:text-navy-deep transition-colors group">
-              <p className="eyebrow text-gold group-hover:text-navy-deep">Silverware · 2001</p>
-              <p className="display text-3xl mt-3">BSSL Cup Final</p>
-              <p className="mt-3 text-cream/75 group-hover:text-navy-deep/80">The club's inaugural piece of silverware. A season that put MHD on the North Shore map.</p>
-            </Link>
-            <Link to="/glory-days" hash="2018" className="border border-gold/40 p-8 hover:bg-gold hover:text-navy-deep transition-colors group">
-              <p className="eyebrow text-gold group-hover:text-navy-deep">National Stage · 2018</p>
-              <p className="display text-3xl mt-3">US Open Cup</p>
-              <p className="mt-3 text-cream/75 group-hover:text-navy-deep/80">MHD FC's entry into the oldest cup competition in American football. A run the whole town turned out for.</p>
-            </Link>
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA */}
       <section className="bg-gold text-navy-deep py-20">
