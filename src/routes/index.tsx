@@ -114,7 +114,7 @@ function Home() {
             <div className="md:col-span-5">
               <div className="aspect-[4/3] overflow-hidden shadow-2xl border border-ink/10">
                 <img
-                  src={item.image}
+                  src={item.image.url}
                   alt={item.alt}
                   width={1200}
                   height={800}
