@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Nav, Footer, Crest, Section } from "@/components/site-chrome";
-import newsLynn from "@/assets/news-lynn.jpg";
-import newsWatchparty from "@/assets/news-watchparty.jpg";
-import newsBank from "@/assets/news-bank.jpg";
-import newsMatch from "@/assets/news-match.jpg";
+import newsLynn from "@/assets/photo-team-masks.jpg.asset.json";
+import newsWatchparty from "@/assets/photo-trio-cup.jpg.asset.json";
+import newsBank from "@/assets/photo-atlantic-cup.jpg.asset.json";
+import newsMatch from "@/assets/photo-action-duel.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
