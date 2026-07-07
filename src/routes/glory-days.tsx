@@ -23,7 +23,7 @@ function Glory() {
       <section id="2001" className="bg-navy-deep text-cream border-b-4 border-gold">
         <div className="mx-auto max-w-[1400px] px-6 py-24 grid md:grid-cols-12 gap-10">
           <div className="md:col-span-5">
-            <img src={huddle} alt="2001 MHD FC squad" width={1200} height={1400} className="w-full aspect-[4/5] object-cover grayscale border-4 border-gold" />
+            <img src={huddle.url} alt="2001 MHD FC squad" width={1200} height={1400} className="w-full aspect-[4/5] object-cover grayscale border-4 border-gold" />
           </div>
           <div className="md:col-span-7">
             <p className="eyebrow text-gold">Chapter One · 2001</p>
@@ -59,7 +59,7 @@ function Glory() {
             </div>
           </div>
           <div className="md:col-span-5 md:order-2 order-1">
-            <img src={hero} alt="2018 MHD FC US Open Cup action" width={1200} height={1400} className="w-full aspect-[4/5] object-cover border-4 border-crimson" />
+            <img src={hero.url} alt="2018 MHD FC US Open Cup action" width={1200} height={1400} className="w-full aspect-[4/5] object-cover border-4 border-crimson" />
           </div>
         </div>
       </section>
