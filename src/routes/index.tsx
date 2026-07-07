@@ -75,56 +75,54 @@ function Home() {
             <span>A Nonprofit Football Club · Est. 2001 · North Shore, MA</span>
           </div>
 
-          <div className="mt-10 grid md:grid-cols-12 gap-8 items-start">
-            <div className="md:col-span-2 flex md:flex-col items-center md:items-start gap-3">
-              <p className="eyebrow text-crimson">Latest</p>
-              <div className="flex md:flex-col gap-2">
-                {newsRotation.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setIdx(i)}
-                    aria-label={`News item ${i + 1}`}
-                    className={`h-px w-10 md:h-8 md:w-px transition-colors ${i === idx ? "bg-crimson" : "bg-ink/20 hover:bg-ink/50"}`}
-                  />
-                ))}
+          <div className="mt-8 flex items-center gap-4">
+            <p className="eyebrow text-crimson">Latest</p>
+            <div className="flex gap-2">
+              {newsRotation.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIdx(i)}
+                  aria-label={`News item ${i + 1}`}
+                  className={`h-px w-10 transition-colors ${i === idx ? "bg-crimson" : "bg-ink/20 hover:bg-ink/50"}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          <article key={idx} className="mt-6 grid md:grid-cols-12 gap-10 items-start animate-in fade-in duration-500">
+            <div className="md:col-span-7">
+              <p className="mono text-[11px] tracking-[0.3em] uppercase text-navy-soft flex items-center gap-3">
+                <span className="text-crimson font-semibold">{item.tag}</span>
+                <span className="w-1 h-1 rounded-full bg-ink/40" />
+                <span>{item.date}</span>
+              </p>
+              <h1 className="mega-display text-ink text-[clamp(2rem,4.5vw,3.75rem)] mt-4">
+                {item.title}
+              </h1>
+              <p className="mt-5 text-base md:text-lg leading-relaxed text-foreground/85">
+                {item.lede}
+              </p>
+              <div className="mt-7 flex flex-wrap gap-4">
+                <Link to="/news" className="mono text-[11px] tracking-[0.28em] uppercase font-semibold bg-ink text-cream px-6 py-3 hover:bg-crimson transition-colors">
+                  Read all news →
+                </Link>
+                <Link to="/contact" className="mono text-[11px] tracking-[0.28em] uppercase font-semibold border border-ink text-ink px-6 py-3 hover:bg-gold transition-colors">
+                  Donate & Support
+                </Link>
               </div>
             </div>
-
-            <article key={idx} className="md:col-span-10 grid md:grid-cols-12 gap-8 items-start animate-in fade-in duration-500">
-              <div className="md:col-span-5 order-first md:order-last">
-                <div className="aspect-[4/3] overflow-hidden shadow-2xl border border-ink/10">
-                  <img
-                    src={item.image}
-                    alt={item.alt}
-                    width={1200}
-                    height={800}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+            <div className="md:col-span-5">
+              <div className="aspect-[4/3] overflow-hidden shadow-2xl border border-ink/10">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  width={1200}
+                  height={800}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="md:col-span-7">
-                <p className="mono text-[11px] tracking-[0.3em] uppercase text-navy-soft flex items-center gap-3">
-                  <span className="text-crimson font-semibold">{item.tag}</span>
-                  <span className="w-1 h-1 rounded-full bg-ink/40" />
-                  <span>{item.date}</span>
-                </p>
-                <h1 className="mega-display text-ink text-[clamp(2rem,4.5vw,3.75rem)] mt-4">
-                  {item.title}
-                </h1>
-                <p className="mt-5 text-base md:text-lg leading-relaxed text-foreground/85">
-                  {item.lede}
-                </p>
-                <div className="mt-7 flex flex-wrap gap-4">
-                  <Link to="/news" className="mono text-[11px] tracking-[0.28em] uppercase font-semibold bg-ink text-cream px-6 py-3 hover:bg-crimson transition-colors">
-                    Read all news →
-                  </Link>
-                  <Link to="/contact" className="mono text-[11px] tracking-[0.28em] uppercase font-semibold border border-ink text-ink px-6 py-3 hover:bg-gold transition-colors">
-                    Donate & Support
-                  </Link>
-                </div>
-              </div>
-            </article>
-          </div>
+            </div>
+          </article>
         </div>
       </section>
 
