@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav, Footer, PageHeader, Section } from "@/components/site-chrome";
-import hero from "@/assets/hero-match.jpg";
-import huddle from "@/assets/squad-huddle.jpg";
+import hero from "@/assets/photo-action-duel.jpg.asset.json";
+import huddle from "@/assets/photo-green-legacy.jpg.asset.json";
 
 export const Route = createFileRoute("/glory-days")({
   head: () => ({
