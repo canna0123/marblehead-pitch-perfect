@@ -1,8 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav, Footer, PageHeader, Section } from "@/components/site-chrome";
-import hero from "@/assets/hero-match.jpg";
-import pitch from "@/assets/pitch-coast.jpg";
-import huddle from "@/assets/squad-huddle.jpg";
+import greenLegacy from "@/assets/photo-green-legacy.jpg.asset.json";
+import atlanticChamps from "@/assets/photo-atlantic-champs.jpg.asset.json";
+import atlanticCup from "@/assets/photo-atlantic-cup.jpg.asset.json";
+import teamMasks from "@/assets/photo-team-masks.jpg.asset.json";
+import ptzoneTeam from "@/assets/photo-ptzone-team.jpg.asset.json";
+import argosTeam from "@/assets/photo-argos-team.jpg.asset.json";
+import bigGroupGoal from "@/assets/photo-big-group-goal.jpg.asset.json";
+import trioCup from "@/assets/photo-trio-cup.jpg.asset.json";
+import trioThumbs from "@/assets/photo-trio-thumbs.jpg.asset.json";
+import actionDuel from "@/assets/photo-action-duel.jpg.asset.json";
 
 export const Route = createFileRoute("/photos")({
   head: () => ({
