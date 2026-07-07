@@ -29,7 +29,7 @@ const eras = [
   { id: "2020", label: "2020 – 2024", note: "The modern MHD FC. Nonprofit era, expanded rosters, and the current three-team structure." },
 ];
 
-const pool = [hero, pitch, huddle, hero, pitch, huddle];
+const pool = [greenLegacy, atlanticChamps, atlanticCup, teamMasks, ptzoneTeam, argosTeam, bigGroupGoal, trioCup, trioThumbs, actionDuel];
 
 function Photos() {
   return (
