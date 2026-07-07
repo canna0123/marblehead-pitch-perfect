@@ -24,12 +24,15 @@ function About() {
       <Section>
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <p className="eyebrow text-crimson">Our Mission</p>
-            <h2 className="display text-4xl md:text-5xl text-navy-deep mt-4">Expand access. Elevate the community. Honor the game.</h2>
+            <p className="eyebrow text-crimson">Background & Foundation</p>
+            <h2 className="display text-4xl md:text-5xl text-navy-deep mt-4">Built on an already strong North Shore soccer community.</h2>
           </div>
           <div className="md:col-span-7 space-y-5 text-lg leading-relaxed text-foreground/85">
-            <p>Marblehead Football Club exists to keep competitive football strong on the North Shore of Massachusetts, and to leverage the club's resources — people, relationships, and modest funds — to open pathways for young players who might otherwise be left on the sideline.</p>
-            <p>We do this through three senior teams that generate community, a growing partnership with Lynn Youth Soccer, and a scholarship pipeline into the North Shore Soccer Academy (NSSA).</p>
+            <p>For years, more than 100 current and former players from Marblehead and surrounding towns — Salem, Beverly, Swampscott, Nahant, and Lynn — have come together through pickup games, local leagues, and a shared passion for the game.</p>
+            <p>This group has grown beyond just playing, forming a close-knit network supported by regular matches, team communication, and a culture of connection that extends off the field.</p>
+            <p>That sense of community has always gone hand-in-hand with a desire to give back. Informal gear drives within the group helped collect and distribute equipment to players in Lynn through a partnership with Lynn Youth Soccer. These efforts highlighted both the needs within nearby communities and the opportunity to make a broader, lasting impact.</p>
+            <p>MHDFC was created to build on this foundation — preserving the culture and relationships that already exist, while providing a structured platform to expand access, grow the game, and support the next generation of players.</p>
+            <p className="display text-2xl text-navy-deep pt-2">Developing players. Expanding access. Building community.</p>
           </div>
         </div>
       </Section>
@@ -37,15 +40,21 @@ function About() {
       <Section className="bg-cream border-y border-navy-deep/10">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="eyebrow text-crimson">A Purpose Beyond the Pitch</p>
-            <h2 className="display text-4xl md:text-5xl text-navy-deep mt-4">A club with a purpose beyond the pitch.</h2>
+            <p className="eyebrow text-crimson">Mission</p>
+            <h2 className="display text-4xl md:text-5xl text-navy-deep mt-4">Make the game more accessible, inclusive, and impactful.</h2>
           </div>
           <div className="md:col-span-8 space-y-6 text-lg leading-relaxed text-foreground/85">
             <p>
-              MHD FC was founded to keep competitive adult football alive on the North Shore — and to use the resources of a strong club to open doors for young players in neighboring communities. Today the club fields <strong>three teams</strong> and runs its charitable work in partnership with <strong>Lynn Youth Soccer</strong> and <strong>North Shore Soccer Academy (NSSA)</strong>.
+              Marblehead Football Club (MHDFC) is a nonprofit organization committed to expanding access to high-quality soccer training and development for all players.
             </p>
             <p>
-              Every board member contributes annually. Every dollar raised through gear drives, watch parties, and community events flows directly into scholarships, equipment, and access.
+              Our mission is to remove barriers to entry — particularly for players from Lynn and surrounding communities — by reducing financial constraints, improving access to facilities, and providing equipment and resources so every child has the opportunity to grow through the game.
+            </p>
+            <p>
+              At MHDFC, we believe soccer is more than just a sport. It is a powerful tool for building confidence, fostering resilience, and creating lasting connections. Through dedicated coaching, player development, and a supportive environment, we aim to develop not only better players, but stronger, more confident young people.
+            </p>
+            <p>
+              Beyond the field, MHDFC strengthens community through events, scholarships, and partnerships that connect Marblehead to the broader soccer landscape.
             </p>
             <div className="flex flex-wrap gap-6 pt-4">
               <Link to="/history" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">Read the History →</Link>
