@@ -40,21 +40,15 @@ const NAV: { label: string; to?: string; children?: { label: string; to: string 
   { label: "Contact", to: "/contact" },
 ];
 
+import crestLogo from "@/assets/mhdfc-crest.webp.asset.json";
+
 export function Crest({ className = "" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 64 72" className={className} aria-hidden>
-      <path d="M32 2 L60 12 V38 C60 54 46 66 32 70 C18 66 4 54 4 38 V12 Z"
-        fill="var(--ink)" stroke="var(--gold)" strokeWidth="1.5" />
-      <path d="M32 8 L54 16 V38 C54 50 43 60 32 63 C21 60 10 50 10 38 V16 Z"
-        fill="none" stroke="var(--gold)" strokeWidth="0.5" opacity="0.6" />
-      <text x="32" y="30" textAnchor="middle" fontFamily="Anton, Impact, sans-serif"
-        fontSize="15" fill="var(--gold)" letterSpacing="1">MHD</text>
-      <line x1="14" y1="35" x2="50" y2="35" stroke="var(--gold)" strokeWidth="0.5" />
-      <text x="32" y="46" textAnchor="middle" fontFamily="Anton, Impact, sans-serif"
-        fontSize="8" fill="var(--gold)" letterSpacing="1.5">FC</text>
-      <text x="32" y="56" textAnchor="middle" fontFamily="JetBrains Mono, monospace"
-        fontSize="3.6" fill="var(--gold-soft)" letterSpacing="1">EST · MMI</text>
-    </svg>
+    <img
+      src={crestLogo.url}
+      alt="MHD FC crest"
+      className={`${className} object-contain`}
+    />
   );
 }
 
