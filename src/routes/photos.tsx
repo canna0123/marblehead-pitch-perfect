@@ -61,7 +61,7 @@ function Photos() {
               {pool.map((src, i) => (
                 <figure key={i} className="group">
                   <div className="aspect-[4/3] overflow-hidden border border-navy-deep/15 bg-navy-deep">
-                    <img src={src} alt={`${era.label} team photo ${i + 1}`} loading="lazy" className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500" />
+                    <img src={src.url} alt={`${era.label} team photo ${i + 1}`} loading="lazy" className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500" />
                   </div>
                   <figcaption className="mt-3 flex justify-between mono text-[11px] tracking-widest uppercase text-navy-soft">
                     <span>MHD FC · Squad</span>
