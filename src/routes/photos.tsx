@@ -1,8 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav, Footer, PageHeader, Section } from "@/components/site-chrome";
-import hero from "@/assets/hero-match.jpg";
-import pitch from "@/assets/pitch-coast.jpg";
-import huddle from "@/assets/squad-huddle.jpg";
+import greenLegacy from "@/assets/photo-green-legacy.jpg.asset.json";
+import atlanticChamps from "@/assets/photo-atlantic-champs.jpg.asset.json";
+import atlanticCup from "@/assets/photo-atlantic-cup.jpg.asset.json";
+import teamMasks from "@/assets/photo-team-masks.jpg.asset.json";
+import ptzoneTeam from "@/assets/photo-ptzone-team.jpg.asset.json";
+import argosTeam from "@/assets/photo-argos-team.jpg.asset.json";
+import bigGroupGoal from "@/assets/photo-big-group-goal.jpg.asset.json";
+import trioCup from "@/assets/photo-trio-cup.jpg.asset.json";
+import trioThumbs from "@/assets/photo-trio-thumbs.jpg.asset.json";
+import actionDuel from "@/assets/photo-action-duel.jpg.asset.json";
 
 export const Route = createFileRoute("/photos")({
   head: () => ({
@@ -22,7 +29,7 @@ const eras = [
   { id: "2020", label: "2020 – 2024", note: "The modern MHD FC. Nonprofit era, expanded rosters, and the current three-team structure." },
 ];
 
-const pool = [hero, pitch, huddle, hero, pitch, huddle];
+const pool = [greenLegacy, atlanticChamps, atlanticCup, teamMasks, ptzoneTeam, argosTeam, bigGroupGoal, trioCup, trioThumbs, actionDuel];
 
 function Photos() {
   return (
@@ -54,7 +61,7 @@ function Photos() {
               {pool.map((src, i) => (
                 <figure key={i} className="group">
                   <div className="aspect-[4/3] overflow-hidden border border-navy-deep/15 bg-navy-deep">
-                    <img src={src} alt={`${era.label} team photo ${i + 1}`} loading="lazy" className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500" />
+                    <img src={src.url} alt={`${era.label} team photo ${i + 1}`} loading="lazy" className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition duration-500" />
                   </div>
                   <figcaption className="mt-3 flex justify-between mono text-[11px] tracking-widest uppercase text-navy-soft">
                     <span>MHD FC · Squad</span>
