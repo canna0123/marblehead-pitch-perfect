@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TeamsRouteImport } from './routes/teams'
-import { Route as StoreRouteImport } from './routes/store'
 import { Route as PhotosRouteImport } from './routes/photos'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as HonorsRouteImport } from './routes/honors'
@@ -25,11 +24,6 @@ import { Route as IndexRouteImport } from './routes/index'
 const TeamsRoute = TeamsRouteImport.update({
   id: '/teams',
   path: '/teams',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const StoreRoute = StoreRouteImport.update({
-  id: '/store',
-  path: '/store',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PhotosRoute = PhotosRouteImport.update({
@@ -94,7 +88,6 @@ export interface FileRoutesByFullPath {
   '/honors': typeof HonorsRoute
   '/news': typeof NewsRoute
   '/photos': typeof PhotosRoute
-  '/store': typeof StoreRoute
   '/teams': typeof TeamsRoute
 }
 export interface FileRoutesByTo {
@@ -108,7 +101,6 @@ export interface FileRoutesByTo {
   '/honors': typeof HonorsRoute
   '/news': typeof NewsRoute
   '/photos': typeof PhotosRoute
-  '/store': typeof StoreRoute
   '/teams': typeof TeamsRoute
 }
 export interface FileRoutesById {
@@ -123,7 +115,6 @@ export interface FileRoutesById {
   '/honors': typeof HonorsRoute
   '/news': typeof NewsRoute
   '/photos': typeof PhotosRoute
-  '/store': typeof StoreRoute
   '/teams': typeof TeamsRoute
 }
 export interface FileRouteTypes {
@@ -139,7 +130,6 @@ export interface FileRouteTypes {
     | '/honors'
     | '/news'
     | '/photos'
-    | '/store'
     | '/teams'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -153,7 +143,6 @@ export interface FileRouteTypes {
     | '/honors'
     | '/news'
     | '/photos'
-    | '/store'
     | '/teams'
   id:
     | '__root__'
@@ -167,7 +156,6 @@ export interface FileRouteTypes {
     | '/honors'
     | '/news'
     | '/photos'
-    | '/store'
     | '/teams'
   fileRoutesById: FileRoutesById
 }
@@ -182,7 +170,6 @@ export interface RootRouteChildren {
   HonorsRoute: typeof HonorsRoute
   NewsRoute: typeof NewsRoute
   PhotosRoute: typeof PhotosRoute
-  StoreRoute: typeof StoreRoute
   TeamsRoute: typeof TeamsRoute
 }
 
@@ -193,13 +180,6 @@ declare module '@tanstack/react-router' {
       path: '/teams'
       fullPath: '/teams'
       preLoaderRoute: typeof TeamsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/store': {
-      id: '/store'
-      path: '/store'
-      fullPath: '/store'
-      preLoaderRoute: typeof StoreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/photos': {
@@ -286,7 +266,6 @@ const rootRouteChildren: RootRouteChildren = {
   HonorsRoute: HonorsRoute,
   NewsRoute: NewsRoute,
   PhotosRoute: PhotosRoute,
-  StoreRoute: StoreRoute,
   TeamsRoute: TeamsRoute,
 }
 export const routeTree = rootRouteImport

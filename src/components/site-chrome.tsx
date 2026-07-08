@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 
-const NAV: { label: string; to?: string; children?: { label: string; to: string }[] }[] = [
+const NAV: { label: string; to?: string; href?: string; children?: { label: string; to: string }[] }[] = [
   { label: "Home", to: "/" },
   {
     label: "Information",
@@ -39,7 +39,8 @@ const NAV: { label: string; to?: string; children?: { label: string; to: string 
       { label: "2018 US Open Cup", to: "/glory-days#2018" },
     ],
   },
-  { label: "Club Store", to: "/store" },
+  { label: "Team Store", href: "https://shop.marbleheadsportshop.com/collections/mhdfc" },
+  { label: "Instagram", href: "https://www.instagram.com/marbleheadfc" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -105,7 +106,16 @@ export function Nav() {
                 onMouseEnter={() => item.children && setOpen(item.label)}
                 onMouseLeave={() => setOpen(null)}
               >
-                {item.to ? (
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-3 inline-block hover:text-crimson transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                ) : item.to ? (
                   <Link
                     to={item.to}
                     className="px-4 py-3 inline-block hover:text-crimson transition-colors"
@@ -171,7 +181,17 @@ export function Nav() {
             <nav className="md:col-span-8 space-y-1">
               {NAV.map((item) => (
                 <div key={item.label} className="border-b border-cream/10 py-3">
-                  {item.to ? (
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMenuOpen(false)}
+                      className="mega-display text-5xl md:text-7xl hover:text-gold transition-colors block"
+                    >
+                      {item.label}
+                    </a>
+                  ) : item.to ? (
                     <Link
                       to={item.to}
                       onClick={() => setMenuOpen(false)}
