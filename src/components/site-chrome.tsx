@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 
-const NAV: { label: string; to?: string; children?: { label: string; to: string }[] }[] = [
+const NAV: { label: string; to?: string; href?: string; children?: { label: string; to: string }[] }[] = [
   { label: "Home", to: "/" },
   {
     label: "Information",
@@ -39,7 +39,8 @@ const NAV: { label: string; to?: string; children?: { label: string; to: string 
       { label: "2018 US Open Cup", to: "/glory-days#2018" },
     ],
   },
-  { label: "Club Store", to: "/store" },
+  { label: "Team Store", href: "https://shop.marbleheadsportshop.com/collections/mhdfc" },
+  { label: "Instagram", href: "https://www.instagram.com/marbleheadfc" },
   { label: "Contact", to: "/contact" },
 ];
 
