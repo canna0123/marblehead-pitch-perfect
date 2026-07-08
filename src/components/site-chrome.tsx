@@ -8,7 +8,7 @@ const NAV: { label: string; to?: string; children?: { label: string; to: string 
     children: [
       { label: "About the Club", to: "/about" },
       { label: "Club History", to: "/history" },
-      { label: "Club By-Laws", to: "/bylaws" },
+      
       { label: "Club Committee", to: "/committee" },
       { label: "Club Honors", to: "/honors" },
       { label: "Individual Honors", to: "/honors#individual" },
