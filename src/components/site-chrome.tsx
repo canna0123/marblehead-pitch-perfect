@@ -5,6 +5,7 @@ const NAV: { label: string; to?: string; children?: { label: string; to: string 
   { label: "Home", to: "/" },
   {
     label: "Information",
+    to: "/about",
     children: [
       { label: "About the Club", to: "/about" },
       { label: "Club History", to: "/history" },
@@ -21,6 +22,7 @@ const NAV: { label: string; to?: string; children?: { label: string; to: string 
   { label: "Events", to: "/events" },
   {
     label: "Team Photos",
+    to: "/photos",
     children: [
       { label: "2000 – 2004", to: "/photos#2000" },
       { label: "2005 – 2009", to: "/photos#2005" },
@@ -31,6 +33,7 @@ const NAV: { label: string; to?: string; children?: { label: string; to: string 
   },
   {
     label: "Glory Days",
+    to: "/glory-days",
     children: [
       { label: "2001 BSSL Cup Final", to: "/glory-days#2001" },
       { label: "2018 US Open Cup", to: "/glory-days#2018" },
