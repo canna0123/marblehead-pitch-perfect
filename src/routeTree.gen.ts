@@ -19,7 +19,6 @@ import { Route as GloryDaysRouteImport } from './routes/glory-days'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CommitteeRouteImport } from './routes/committee'
-import { Route as BylawsRouteImport } from './routes/bylaws'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -73,11 +72,6 @@ const CommitteeRoute = CommitteeRouteImport.update({
   path: '/committee',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BylawsRoute = BylawsRouteImport.update({
-  id: '/bylaws',
-  path: '/bylaws',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -92,7 +86,6 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/bylaws': typeof BylawsRoute
   '/committee': typeof CommitteeRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
@@ -107,7 +100,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/bylaws': typeof BylawsRoute
   '/committee': typeof CommitteeRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
@@ -123,7 +115,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/bylaws': typeof BylawsRoute
   '/committee': typeof CommitteeRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
@@ -140,7 +131,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
-    | '/bylaws'
     | '/committee'
     | '/contact'
     | '/events'
@@ -155,7 +145,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
-    | '/bylaws'
     | '/committee'
     | '/contact'
     | '/events'
@@ -170,7 +159,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
-    | '/bylaws'
     | '/committee'
     | '/contact'
     | '/events'
@@ -186,7 +174,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BylawsRoute: typeof BylawsRoute
   CommitteeRoute: typeof CommitteeRoute
   ContactRoute: typeof ContactRoute
   EventsRoute: typeof EventsRoute
@@ -271,13 +258,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommitteeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/bylaws': {
-      id: '/bylaws'
-      path: '/bylaws'
-      fullPath: '/bylaws'
-      preLoaderRoute: typeof BylawsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -298,7 +278,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BylawsRoute: BylawsRoute,
   CommitteeRoute: CommitteeRoute,
   ContactRoute: ContactRoute,
   EventsRoute: EventsRoute,
