@@ -59,7 +59,7 @@ function About() {
             <div className="flex flex-wrap gap-6 pt-4">
               <Link to="/history" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">Read the History →</Link>
               <Link to="/committee" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">Meet the Committee →</Link>
-              <Link to="/bylaws" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">Club By-Laws →</Link>
+              
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@ function About() {
           <div className="border border-gold/40 p-8">
             <p className="eyebrow text-gold">Quick Links</p>
             <ul className="mt-6 space-y-3 text-lg">
-              <li><Link to="/bylaws" className="hover:text-gold border-b border-gold/40">Club By-Laws</Link></li>
+              
               <li><Link to="/committee" className="hover:text-gold border-b border-gold/40">Club Committee</Link></li>
               <li><Link to="/honors" className="hover:text-gold border-b border-gold/40">Club Honors</Link></li>
               <li><Link to="/history" className="hover:text-gold border-b border-gold/40">Club History</Link></li>
