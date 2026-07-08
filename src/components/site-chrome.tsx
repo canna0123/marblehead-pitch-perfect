@@ -40,7 +40,7 @@ const NAV: { label: string; to?: string; children?: { label: string; to: string 
   { label: "Contact", to: "/contact" },
 ];
 
-import crestLogo from "@/assets/mhdfc-crest.webp.asset.json";
+import crestLogo from "@/assets/mhdfc-crest.png.asset.json";
 
 export function Crest({ className = "" }: { className?: string }) {
   return (
