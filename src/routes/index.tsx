@@ -9,10 +9,10 @@ import newsMatch from "@/assets/photo-action-duel.jpg.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Marblehead Football Club · MHD FC" },
+      { title: "MHDFC" },
       { name: "description", content: "A nonprofit soccer club on the North Shore of Massachusetts. Three teams, one mission — grow the game, support Lynn Youth Soccer, and expand access to competitive football." },
-      { property: "og:title", content: "Marblehead Football Club" },
-      { property: "og:description", content: "Nonprofit. Community. Football." },
+      { property: "og:title", content: "MHDFC" },
+      { property: "og:description", content: "A nonprofit soccer club on the North Shore of Massachusetts. Three teams, one mission — grow the game, support Lynn Youth Soccer, and expand access to competitive football." },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
