@@ -16,38 +16,24 @@ export const Route = createFileRoute("/news")({
 
 const posts = [
   {
-    date: "2025-03-01",
+    date: "2026-05-01",
     author: "MHD FC Board",
     tag: "Community Partnership",
     title: "Together with Lynn Youth Soccer — building a lasting partnership",
     lede: "Through outreach led by our board and coaches, MHD FC has begun building a lasting partnership with Lynn Youth Soccer — attending tryouts, identifying scholarship candidates for the North Shore Soccer Academy, and expanding access to elite-level training for young players who might not otherwise have the opportunity. Our goal is to name our first cohort of scholarship recipients ahead of the coming season. Milestones: 1st scholarship cohort · ongoing tryout attendance in Lynn · NSSA player-development pathway.",
   },
   {
-    date: "2025-02-14",
+    date: "2026-06-14",
     author: "Admin",
     tag: "President's Update",
-    title: "Board commitments deposited; Watch Party & Gear Drive in planning",
-    lede: "A brief update from the President: Mike Grubor and Ethan Park have led our engagement with Lynn Youth Soccer, attending tryouts and identifying prospective scholarship recipients for NSSA. Board commitments are in and deposited at National Grand Bank. We're also planning a World Cup watch party with a gear drive at RIP Tide Lounge, and an end-of-season MHD community gathering.",
+    title: "Watch Party & Gear Drive in planning",
+    lede: "We are planning a World Cup watch party with a gear drive at RIP Tide Lounge, and an end-of-season MHD community gathering. Stay tuned for more details. Excited to see you all there.",
   },
   {
-    date: "2025-01-08",
-    author: "MHD FC Board",
-    tag: "Announcement",
-    title: "MHD FC opens operating account at National Grand Bank",
-    lede: "As part of our formal nonprofit standing, MHD FC has opened its operating account at National Grand Bank. Initial board commitments have been deposited and the Treasurer is exploring a Venmo option for member collections and event fundraising.",
-  },
-  {
-    date: "2024-11-22",
-    author: "A. Rossi",
-    tag: "Infrastructure",
-    title: "Building the operational backbone: Google Workspace, records, and website",
-    lede: "The Committee has identified operational infrastructure — Google Workspace, MHD FC Gmail accounts, document governance, sponsor tracking, and this website — as an immediate priority. Alessandro is coordinating with Ramsay and Sean on the buildout.",
-  },
-  {
-    date: "2024-10-04",
+    date: "2026-03-04",
     author: "Match Reports",
     tag: "First XI",
-    title: "MHD FC opens fall campaign with a hard-fought draw at Seaside",
+    title: "MHD FC O30's opens Spring campaign with a hard-fought draw at Lynfield",
     lede: "The First XI opened the campaign with a spirited 1–1 draw. Match report and gallery to follow.",
   },
 ];
