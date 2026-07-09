@@ -119,46 +119,47 @@ function Home() {
 
       {/* TEAMS + STATS */}
       <section className="bg-parchment border-y border-navy-deep/10">
-        <div className="mx-auto max-w-[1400px] px-6 py-24">
-          <div className="flex items-end justify-between flex-wrap gap-4 mb-14">
+        <div className="mx-auto max-w-[1400px] px-6 py-12">
+          <div className="flex items-end justify-between flex-wrap gap-3 mb-7">
             <div>
-              <p className="eyebrow text-crimson">The Three Teams</p>
-              <h2 className="display text-5xl md:text-6xl text-navy-deep mt-3">One crest, three sides.</h2>
+              <p className="eyebrow text-crimson">The Five Teams</p>
+              <h2 className="display text-2xl md:text-3xl text-navy-deep mt-1.5">One crest, five sides.</h2>
             </div>
-            <Link to="/teams" className="text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">All teams →</Link>
+            <Link to="/teams" className="text-sm text-navy-deep font-semibold border-b-2 border-gold hover:text-crimson">All teams →</Link>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6 mb-14 border-y border-navy-deep/15 py-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-7 border-y border-navy-deep/15 py-5">
             {[
-              { n: "3", l: "Senior Teams" },
+              { n: "5", l: "Senior Teams" },
               { n: "24+", l: "Years of Play" },
               { n: "100%", l: "Volunteer-Run" },
               { n: "1", l: "Growing Partnership · Lynn YS" },
             ].map((s) => (
-              <div key={s.l} className="border-t-2 border-gold pt-4">
-                <p className="display text-4xl md:text-5xl text-navy-deep font-semibold">{s.n}</p>
-                <p className="eyebrow text-navy-soft mt-2">{s.l}</p>
+              <div key={s.l} className="border-t-2 border-gold pt-2">
+                <p className="display text-2xl md:text-2xl text-navy-deep font-semibold">{s.n}</p>
+                <p className="eyebrow text-[10px] text-navy-soft mt-1">{s.l}</p>
               </div>
             ))}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
             {[
-              { name: "MHD FC First XI", league: "OTHSL Open Division", note: "Our flagship senior side. Sundays at Seaside Park." },
-              { name: "MHD FC Over-40", league: "OTHSL Masters", note: "The founding side. Continuous play since our earliest seasons." },
-              { name: "MHD FC 068", league: "Beverly Affiliate", note: "Our regional affiliate team, extending the club footprint through the North Shore." },
+              { name: "MHD FC O30's", league: "Over-30 Division" },
+              { name: "MHD FC O40's", league: "Over-40 Division" },
+              { name: "MHD FC O48's", league: "Over-48 Division" },
+              { name: "MHD FC O55's", league: "Over-55 Division" },
+              { name: "MHD FC O68's", league: "Over-68 Division" },
             ].map((t) => (
-              <article key={t.name} className="bg-cream border border-navy-deep/10 p-8 hover:border-gold transition-colors group">
-                <Crest className="w-12 h-14" />
-                <p className="display text-2xl text-navy-deep mt-6 font-semibold">{t.name}</p>
-                <p className="eyebrow text-gold mt-2">{t.league}</p>
-                <p className="mt-4 text-foreground/75 leading-relaxed">{t.note}</p>
-                <Link to="/teams" className="mt-6 inline-block text-crimson font-semibold text-sm border-b border-crimson group-hover:border-navy-deep group-hover:text-navy-deep">Squad details →</Link>
-              </article>
+              <Link to="/teams" key={t.name} className="bg-cream border border-navy-deep/10 p-4 hover:border-gold transition-colors group block">
+                <Crest className="w-6 h-7" />
+                <p className="display text-base text-navy-deep mt-3 font-semibold">{t.name}</p>
+                <p className="eyebrow text-[10px] text-gold mt-1">{t.league}</p>
+              </Link>
             ))}
           </div>
         </div>
       </section>
+
 
       <Footer />
     </div>
