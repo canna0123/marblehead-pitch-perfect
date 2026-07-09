@@ -233,7 +233,7 @@ export function PageHeader({ eyebrow, title, subtitle }: { eyebrow: string; titl
     <section className="bg-background border-b border-ink/15">
       <div className="mx-auto max-w-[1600px] px-6 pt-16 pb-10 md:pt-24 md:pb-16">
         <p className="eyebrow text-crimson">{eyebrow}</p>
-        <h1 className="mega-display text-[clamp(2rem,6.5vw,7rem)] text-ink mt-6 whitespace-nowrap overflow-hidden">
+        <h1 className="mega-display text-[clamp(1.75rem,4.5vw,4.5rem)] text-ink mt-6 break-words">
           {title}
         </h1>
         {subtitle && <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/80">{subtitle}</p>}
