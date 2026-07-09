@@ -12,12 +12,12 @@ export const Route = createFileRoute("/honors")({
 });
 
 const clubHonors = [
-  { y: "2001", t: "BSSL Cup — Finalist" },
+  { y: "2001", t: "TBD" },
   { y: "2009", t: "OTHSL Divisional Title" },
-  { y: "2013", t: "North Shore Charity Shield" },
+  { y: "2013", t: "TBD" },
   { y: "2017", t: "OTHSL Divisional Title" },
-  { y: "2018", t: "US Open Cup — Qualifying Round Appearance" },
-  { y: "2022", t: "BSSL Fair Play Award" },
+  { y: "2018", t: "TBD" },
+  { y: "2022", t: "TBD" },
 ];
 
 const individualHonors = [
