@@ -147,12 +147,6 @@ export function Nav() {
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-crimson animate-pulse" />
               <span>Now Recruiting · 2025 Season</span>
             </span>
-            <Link
-              to="/contact"
-              className="hidden sm:inline underline underline-offset-4 decoration-ink/50 hover:decoration-ink"
-            >
-              Register interest →
-            </Link>
           </div>
         </div>
       </header>
