@@ -269,30 +269,30 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1600px] px-6 py-16">
-        <div className="grid md:grid-cols-4 gap-10">
+      <div className="mx-auto max-w-[1600px] px-6 py-8">
+        <div className="grid md:grid-cols-4 gap-6">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
-              <Crest className="w-12 h-14" />
+              <Crest className="w-10 h-12" />
               <p className="mono text-[11px] tracking-[0.3em] uppercase text-cream/70">MHD FC · Est. 2001</p>
             </div>
-            <p className="mt-6 max-w-md leading-relaxed">
+            <p className="mt-3 max-w-md leading-relaxed">
               A nonprofit soccer club serving the North Shore of Massachusetts. Our mission is to grow the game, foster
               community, and expand access for players who might otherwise be left on the sideline.
             </p>
           </div>
           <div>
-            <p className="eyebrow text-gold mb-4">Contact</p>
+            <p className="eyebrow text-gold mb-2">Contact</p>
             <p className="text-cream">
               info@mhdfc.org
               <br />
               Marblehead, MA 01945
             </p>
-            <p className="mt-4 mono text-xs">Banking · National Grand Bank</p>
+            <p className="mt-2 mono text-xs">Banking · National Grand Bank</p>
           </div>
           <div>
-            <p className="eyebrow text-gold mb-4">Partners</p>
-            <ul className="space-y-1.5 text-cream">
+            <p className="eyebrow text-gold mb-2">Partners</p>
+            <ul className="space-y-1 text-cream">
               <li>Lynn Youth Soccer</li>
               <li>North Shore Soccer Academy</li>
               <li>OTHSL — Over-the-Hill League</li>
@@ -301,6 +301,7 @@ export function Footer() {
           </div>
         </div>
       </div>
+
 
       <div className="border-t border-cream/10">
         <div className="mx-auto max-w-[1600px] px-6 py-5 flex flex-wrap justify-between gap-3 mono text-[10px] tracking-[0.25em] uppercase text-cream/40">
