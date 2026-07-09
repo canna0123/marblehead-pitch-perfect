@@ -116,7 +116,7 @@ function Contact() {
       <section className="bg-gold text-navy-deep py-14">
         <div className="mx-auto max-w-[1400px] px-6 flex flex-wrap items-center justify-between gap-6">
           <div>
-            <p className="eyebrow">Now Recruiting for 2025</p>
+            <p className="eyebrow">Now Recruiting for 2026/27</p>
             <p className="display text-3xl md:text-4xl mt-1 font-semibold">
               All three teams are accepting new players.
             </p>
