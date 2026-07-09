@@ -93,7 +93,7 @@ function About() {
             <ul className="mt-6 space-y-3 text-lg">
               
               <li><Link to="/committee" className="hover:text-gold border-b border-gold/40">Club Committee</Link></li>
-              <li><Link to="/honors" className="hover:text-gold border-b border-gold/40">Club Honors</Link></li>
+              <li><Link to="/glory-days" className="hover:text-gold border-b border-gold/40">Club Honors</Link></li>
               <li><Link to="/history" className="hover:text-gold border-b border-gold/40">Club History</Link></li>
               <li><Link to="/contact" className="hover:text-gold border-b border-gold/40">Contact the Board</Link></li>
             </ul>

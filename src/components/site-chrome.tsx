@@ -9,32 +9,15 @@ const NAV: { label: string; to?: string; href?: string; children?: { label: stri
     children: [
       { label: "About the Club", to: "/about" },
       { label: "Club History", to: "/history" },
-
       { label: "Club Committee", to: "/committee" },
-      { label: "Club Honors", to: "/honors" },
-      { label: "Individual Honors", to: "/honors#individual" },
       { label: "Lynn Youth Partnership", to: "/news" },
       { label: "News", to: "/news" },
     ],
   },
   { label: "Teams", to: "/teams" },
   { label: "Events", to: "/events" },
-  {
-    label: "Team Photos",
-    to: "/photos",
-    children: [
-      { label: "2000 – 2004", to: "/photos#2000" },
-      { label: "2005 – 2009", to: "/photos#2005" },
-      { label: "2010 – 2014", to: "/photos#2010" },
-      { label: "2015 – 2019", to: "/photos#2015" },
-      { label: "2020 – 2024", to: "/photos#2020" },
-    ],
-  },
-  {
-    label: "Glory Days",
-    to: "/glory-days",
-    children: [{ label: "Best of the Best", to: "/glory-days#2001" }],
-  },
+  { label: "Team Photos", to: "/photos" },
+  { label: "Glory Days", to: "/glory-days" },
   { label: "Team Store", href: "https://shop.marbleheadsportshop.com/collections/mhdfc" },
   { label: "Instagram", href: "https://www.instagram.com/marbleheadfc" },
   { label: "Contact", to: "/contact" },
@@ -250,7 +233,7 @@ export function PageHeader({ eyebrow, title, subtitle }: { eyebrow: string; titl
     <section className="bg-background border-b border-ink/15">
       <div className="mx-auto max-w-[1600px] px-6 pt-16 pb-10 md:pt-24 md:pb-16">
         <p className="eyebrow text-crimson">{eyebrow}</p>
-        <h1 className="mega-display text-[clamp(2rem,6.5vw,7rem)] text-ink mt-6 whitespace-nowrap overflow-hidden">
+        <h1 className="mega-display text-[clamp(1.75rem,4.5vw,4.5rem)] text-ink mt-6 break-words">
           {title}
         </h1>
         {subtitle && <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/80">{subtitle}</p>}
