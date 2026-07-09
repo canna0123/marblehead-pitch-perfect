@@ -9,13 +9,12 @@ const NAV: { label: string; to?: string; href?: string; children?: { label: stri
     children: [
       { label: "About the Club", to: "/about" },
       { label: "Club History", to: "/history" },
-      
+
       { label: "Club Committee", to: "/committee" },
       { label: "Club Honors", to: "/honors" },
       { label: "Individual Honors", to: "/honors#individual" },
       { label: "Lynn Youth Partnership", to: "/news" },
       { label: "News", to: "/news" },
-
     ],
   },
   { label: "Teams", to: "/teams" },
@@ -34,10 +33,7 @@ const NAV: { label: string; to?: string; href?: string; children?: { label: stri
   {
     label: "Glory Days",
     to: "/glory-days",
-    children: [
-      { label: "2001 BSSL Cup Final", to: "/glory-days#2001" },
-      { label: "2018 US Open Cup", to: "/glory-days#2018" },
-    ],
+    children: [{ label: "Best of the Best", to: "/glory-days#2001" }],
   },
   { label: "Team Store", href: "https://shop.marbleheadsportshop.com/collections/mhdfc" },
   { label: "Instagram", href: "https://www.instagram.com/marbleheadfc" },
@@ -47,13 +43,7 @@ const NAV: { label: string; to?: string; href?: string; children?: { label: stri
 import crestLogo from "@/assets/mhdfc-crest.png.asset.json";
 
 export function Crest({ className = "" }: { className?: string }) {
-  return (
-    <img
-      src={crestLogo.url}
-      alt="MHD FC crest"
-      className={`${className} object-contain`}
-    />
-  );
+  return <img src={crestLogo.url} alt="MHD FC crest" className={`${className} object-contain`} />;
 }
 
 export function Nav() {
@@ -75,7 +65,10 @@ export function Nav() {
       {/* Primary bar: left wordmark · center crest · right MENU */}
       <header className="sticky top-0 z-50 bg-background border-b border-ink/15">
         <div className="mx-auto max-w-[1600px] px-4 md:px-6 h-16 md:h-20 grid grid-cols-[1fr_auto_1fr] items-center">
-          <Link to="/" className="justify-self-start mono text-[11px] md:text-[13px] tracking-[0.28em] uppercase text-ink hover:text-crimson transition-colors font-semibold">
+          <Link
+            to="/"
+            className="justify-self-start mono text-[11px] md:text-[13px] tracking-[0.28em] uppercase text-ink hover:text-crimson transition-colors font-semibold"
+          >
             <span className="hidden md:inline">Marblehead Football Club</span>
             <span className="md:hidden">MHD FC</span>
           </Link>
@@ -154,7 +147,10 @@ export function Nav() {
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-crimson animate-pulse" />
               <span>Now Recruiting · 2025 Season</span>
             </span>
-            <Link to="/contact" className="hidden sm:inline underline underline-offset-4 decoration-ink/50 hover:decoration-ink">
+            <Link
+              to="/contact"
+              className="hidden sm:inline underline underline-offset-4 decoration-ink/50 hover:decoration-ink"
+            >
               Register interest →
             </Link>
           </div>
@@ -166,7 +162,9 @@ export function Nav() {
         <div className="fixed inset-0 z-[100] bg-ink text-cream overflow-y-auto">
           <div className="mx-auto max-w-[1600px] px-6 py-6">
             <div className="grid grid-cols-[1fr_auto_1fr] items-center">
-              <span className="mono text-[11px] md:text-[13px] tracking-[0.28em] uppercase text-cream/80 font-semibold">Marblehead Football Club</span>
+              <span className="mono text-[11px] md:text-[13px] tracking-[0.28em] uppercase text-cream/80 font-semibold">
+                Marblehead Football Club
+              </span>
               <Crest className="w-11 h-12 justify-self-center" />
               <button
                 onClick={() => setMenuOpen(false)}
@@ -223,7 +221,11 @@ export function Nav() {
             <aside className="md:col-span-4 space-y-8">
               <div>
                 <p className="eyebrow text-gold">Contact</p>
-                <p className="mt-3 text-cream/85">info@mhdfc.org<br />Marblehead, MA 01945</p>
+                <p className="mt-3 text-cream/85">
+                  info@mhdfc.org
+                  <br />
+                  Marblehead, MA 01945
+                </p>
               </div>
               <div>
                 <p className="eyebrow text-gold">Partners</p>
@@ -254,10 +256,10 @@ export function PageHeader({ eyebrow, title, subtitle }: { eyebrow: string; titl
     <section className="bg-background border-b border-ink/15">
       <div className="mx-auto max-w-[1600px] px-6 pt-16 pb-10 md:pt-24 md:pb-16">
         <p className="eyebrow text-crimson">{eyebrow}</p>
-        <h1 className="mega-display text-[clamp(2rem,6.5vw,7rem)] text-ink mt-6 whitespace-nowrap overflow-hidden">{title}</h1>
-        {subtitle && (
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/80">{subtitle}</p>
-        )}
+        <h1 className="mega-display text-[clamp(2rem,6.5vw,7rem)] text-ink mt-6 whitespace-nowrap overflow-hidden">
+          {title}
+        </h1>
+        {subtitle && <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/80">{subtitle}</p>}
       </div>
     </section>
   );
@@ -276,33 +278,39 @@ export function Footer() {
     <footer className="bg-ink text-cream/70 border-t-4 border-gold">
       <div className="overflow-hidden ticker-mask border-b border-cream/10 py-4">
         <div className="flex gap-16 mono text-[11px] tracking-[0.3em] uppercase whitespace-nowrap animate-marquee text-gold/80">
-          {Array.from({ length: 2 }).flatMap((_, i) => [
-            "Marblehead Football Club",
-            "Nonprofit 501(c)(3)",
-            "Partnership · Lynn Youth Soccer",
-            "North Shore Soccer Academy",
-            "OTHSL Affiliate",
-            "Est. 2001",
-            "Scholarships · Access · Community",
-          ].map((t, j) => (<span key={`${i}-${j}`}>◆ {t}</span>)))}
+          {Array.from({ length: 2 }).flatMap((_, i) =>
+            [
+              "Marblehead Football Club",
+              "Nonprofit 501(c)(3)",
+              "Partnership · Lynn Youth Soccer",
+              "North Shore Soccer Academy",
+              "OTHSL Affiliate",
+              "Est. 2001",
+              "Scholarships · Access · Community",
+            ].map((t, j) => <span key={`${i}-${j}`}>◆ {t}</span>),
+          )}
         </div>
       </div>
 
       <div className="mx-auto max-w-[1600px] px-6 py-16">
         <div className="grid md:grid-cols-4 gap-10">
-
           <div className="md:col-span-2">
             <div className="flex items-center gap-3">
               <Crest className="w-12 h-14" />
               <p className="mono text-[11px] tracking-[0.3em] uppercase text-cream/70">MHD FC · Est. 2001</p>
             </div>
             <p className="mt-6 max-w-md leading-relaxed">
-              A nonprofit soccer club serving the North Shore of Massachusetts. Our mission is to grow the game, foster community, and expand access for players who might otherwise be left on the sideline.
+              A nonprofit soccer club serving the North Shore of Massachusetts. Our mission is to grow the game, foster
+              community, and expand access for players who might otherwise be left on the sideline.
             </p>
           </div>
           <div>
             <p className="eyebrow text-gold mb-4">Contact</p>
-            <p className="text-cream">info@mhdfc.org<br />Marblehead, MA 01945</p>
+            <p className="text-cream">
+              info@mhdfc.org
+              <br />
+              Marblehead, MA 01945
+            </p>
             <p className="mt-4 mono text-xs">Banking · National Grand Bank</p>
           </div>
           <div>
