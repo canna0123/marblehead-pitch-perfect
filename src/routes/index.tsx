@@ -1,9 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Nav, Footer, Crest, Section } from "@/components/site-chrome";
-import newsLynn from "@/assets/photo-team-masks.jpg.asset.json";
-import newsWatchparty from "@/assets/photo-trio-cup.jpg.asset.json";
-import newsBank from "@/assets/photo-atlantic-cup.jpg.asset.json";
+import newsLynn from "@/assets/youth-huddle.jpg.asset.json";
+import newsWatchparty from "@/assets/watch-party.jpg.asset.json";
 import newsMatch from "@/assets/photo-action-duel.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -27,23 +26,15 @@ const newsRotation = [
     title: "Together with Lynn Youth Soccer.",
     lede: "MHD FC has begun building a lasting partnership with Lynn Youth Soccer — attending tryouts, identifying scholarship candidates for NSSA, and expanding access for young players who might not otherwise have the opportunity.",
     image: newsLynn,
-    alt: "Youth players training at golden hour",
+    alt: "Youth players huddled at sunset",
   },
   {
     tag: "President's Update",
     date: "Feb 14, 2025",
-    title: "Board commitments deposited; Watch Party & Gear Drive in planning.",
-    lede: "Board contributions are in at National Grand Bank. Planning is underway for a World Cup watch party with a gear collection benefiting Lynn Youth Soccer.",
+    title: "World Cup Watch Party & Gear Drive in planning.",
+    lede: "Planning is underway for a World Cup watch party paired with a gear collection benefiting Lynn Youth Soccer. Details on venue and date coming soon.",
     image: newsWatchparty,
-    alt: "Supporters gathered at a community watch party",
-  },
-  {
-    tag: "Announcement",
-    date: "Jan 8, 2025",
-    title: "MHD FC opens operating account at National Grand Bank.",
-    lede: "As part of our formal nonprofit standing, the club has opened its operating account and is exploring Venmo for member collections and event fundraising.",
-    image: newsBank,
-    alt: "Historic New England bank building",
+    alt: "Fans cheering at a World Cup watch party",
   },
   {
     tag: "First XI",
