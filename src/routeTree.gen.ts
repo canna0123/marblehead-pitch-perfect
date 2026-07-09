@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TeamsRouteImport } from './routes/teams'
 import { Route as PhotosRouteImport } from './routes/photos'
 import { Route as NewsRouteImport } from './routes/news'
-import { Route as HonorsRouteImport } from './routes/honors'
 import { Route as HistoryRouteImport } from './routes/history'
 import { Route as GloryDaysRouteImport } from './routes/glory-days'
 import { Route as EventsRouteImport } from './routes/events'
@@ -34,11 +33,6 @@ const PhotosRoute = PhotosRouteImport.update({
 const NewsRoute = NewsRouteImport.update({
   id: '/news',
   path: '/news',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HonorsRoute = HonorsRouteImport.update({
-  id: '/honors',
-  path: '/honors',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HistoryRoute = HistoryRouteImport.update({
@@ -85,7 +79,6 @@ export interface FileRoutesByFullPath {
   '/events': typeof EventsRoute
   '/glory-days': typeof GloryDaysRoute
   '/history': typeof HistoryRoute
-  '/honors': typeof HonorsRoute
   '/news': typeof NewsRoute
   '/photos': typeof PhotosRoute
   '/teams': typeof TeamsRoute
@@ -98,7 +91,6 @@ export interface FileRoutesByTo {
   '/events': typeof EventsRoute
   '/glory-days': typeof GloryDaysRoute
   '/history': typeof HistoryRoute
-  '/honors': typeof HonorsRoute
   '/news': typeof NewsRoute
   '/photos': typeof PhotosRoute
   '/teams': typeof TeamsRoute
@@ -112,7 +104,6 @@ export interface FileRoutesById {
   '/events': typeof EventsRoute
   '/glory-days': typeof GloryDaysRoute
   '/history': typeof HistoryRoute
-  '/honors': typeof HonorsRoute
   '/news': typeof NewsRoute
   '/photos': typeof PhotosRoute
   '/teams': typeof TeamsRoute
@@ -127,7 +118,6 @@ export interface FileRouteTypes {
     | '/events'
     | '/glory-days'
     | '/history'
-    | '/honors'
     | '/news'
     | '/photos'
     | '/teams'
@@ -140,7 +130,6 @@ export interface FileRouteTypes {
     | '/events'
     | '/glory-days'
     | '/history'
-    | '/honors'
     | '/news'
     | '/photos'
     | '/teams'
@@ -153,7 +142,6 @@ export interface FileRouteTypes {
     | '/events'
     | '/glory-days'
     | '/history'
-    | '/honors'
     | '/news'
     | '/photos'
     | '/teams'
@@ -167,7 +155,6 @@ export interface RootRouteChildren {
   EventsRoute: typeof EventsRoute
   GloryDaysRoute: typeof GloryDaysRoute
   HistoryRoute: typeof HistoryRoute
-  HonorsRoute: typeof HonorsRoute
   NewsRoute: typeof NewsRoute
   PhotosRoute: typeof PhotosRoute
   TeamsRoute: typeof TeamsRoute
@@ -194,13 +181,6 @@ declare module '@tanstack/react-router' {
       path: '/news'
       fullPath: '/news'
       preLoaderRoute: typeof NewsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/honors': {
-      id: '/honors'
-      path: '/honors'
-      fullPath: '/honors'
-      preLoaderRoute: typeof HonorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/history': {
@@ -263,7 +243,6 @@ const rootRouteChildren: RootRouteChildren = {
   EventsRoute: EventsRoute,
   GloryDaysRoute: GloryDaysRoute,
   HistoryRoute: HistoryRoute,
-  HonorsRoute: HonorsRoute,
   NewsRoute: NewsRoute,
   PhotosRoute: PhotosRoute,
   TeamsRoute: TeamsRoute,

@@ -7,17 +7,33 @@ export const Route = createFileRoute("/glory-days")({
   head: () => ({
     meta: [
       { title: "Glory Days · Marblehead Football Club" },
-      { name: "description", content: "The great moments in MHD FC history — the 2001 BSSL Cup Final and the 2018 US Open Cup run." },
+      { name: "description", content: "The great moments and honors in MHD FC history." },
     ],
   }),
   component: Glory,
 });
 
+const clubHonors = [
+  { y: "2001", t: "TBD" },
+  { y: "2009", t: "OTHSL Divisional Title" },
+  { y: "2013", t: "TBD" },
+  { y: "2017", t: "OTHSL Divisional Title" },
+  { y: "2018", t: "TBD" },
+  { y: "2022", t: "TBD" },
+];
+
+const individualHonors = [
+  { y: "2004", n: "TBD", h: "OTHSL Golden Boot" },
+  { y: "2011", n: "TBD", h: "BSSL Player of the Year" },
+  { y: "2024", n: "Ethan Park", h: "North Shore Coach of the Year (Youth)" },
+  { y: "2025", n: "Adam Bailey", h: "Northeastern Conference Coach of the Year" },
+];
+
 function Glory() {
   return (
     <div className="bg-background text-foreground">
       <Nav />
-      <PageHeader eyebrow="The Great Moments" title="Glory Days" subtitle="A club is defined by its finest hours. These are ours — the matches, seasons, and squads that Marblehead will not forget." />
+      <PageHeader eyebrow="The Great Moments" title="Glory Days" subtitle="A club is defined by its finest hours. These are ours — the matches, seasons, squads, and honors that Marblehead will not forget." />
 
       {/* 2001 */}
       <section id="2001" className="bg-navy-deep text-cream border-b-4 border-gold">
@@ -60,6 +76,49 @@ function Glory() {
           </div>
           <div className="md:col-span-5 md:order-2 order-1">
             <img src={hero.url} alt="2018 MHD FC US Open Cup action" width={1200} height={1400} className="w-full aspect-[4/5] object-cover border-4 border-crimson" />
+          </div>
+        </div>
+      </section>
+
+      {/* Club Honors */}
+      <Section>
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <p className="eyebrow text-crimson">Silverware</p>
+            <h2 className="display text-4xl text-navy-deep mt-4">Club Honors.</h2>
+            <p className="mt-4 text-foreground/75">Team trophies, titles, and cup appearances across MHD FC history.</p>
+          </div>
+          <div className="md:col-span-8">
+            <div className="border-t border-navy-deep/20">
+              {clubHonors.map((h) => (
+                <div key={h.y + h.t} className="grid grid-cols-[100px_1fr] gap-6 py-5 border-b border-navy-deep/15 items-baseline">
+                  <p className="display text-3xl text-gold font-semibold">{h.y}</p>
+                  <p className="text-lg text-navy-deep">{h.t}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Individual Honors */}
+      <section id="individual" className="bg-parchment border-y border-navy-deep/10">
+        <div className="mx-auto max-w-[1400px] px-6 py-24 grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <p className="eyebrow text-crimson">Recognition</p>
+            <h2 className="display text-4xl text-navy-deep mt-4">Individual Honors.</h2>
+            <p className="mt-4 text-foreground/75">Personal distinctions earned by MHD FC players and coaches.</p>
+          </div>
+          <div className="md:col-span-8">
+            <div className="border-t border-navy-deep/20">
+              {individualHonors.map((h) => (
+                <div key={h.n + h.y} className="grid grid-cols-[80px_1fr_auto] gap-6 py-5 border-b border-navy-deep/15 items-baseline">
+                  <p className="mono text-sm text-navy-soft tracking-widest">{h.y}</p>
+                  <p className="text-lg text-navy-deep font-semibold">{h.n}</p>
+                  <p className="text-right text-foreground/75">{h.h}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

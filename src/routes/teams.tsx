@@ -5,7 +5,7 @@ export const Route = createFileRoute("/teams")({
   head: () => ({
     meta: [
       { title: "Teams · Marblehead Football Club" },
-      { name: "description", content: "The three teams of MHD FC — First XI, Over-40, and 068 Beverly affiliate." },
+      { name: "description", content: "The five age-group teams of MHD FC — O30's, O40's, O48's, O55's, and O68's." },
     ],
   }),
   component: Teams,
@@ -13,31 +13,49 @@ export const Route = createFileRoute("/teams")({
 
 const teams = [
   {
-    slug: "first-xi",
-    name: "MHD FC First XI",
-    league: "OTHSL Open Division",
+    slug: "o30",
+    name: "MHD FC O30's",
+    league: "Over-30 Division",
     home: "Seaside Park, Marblehead",
-    training: "Wednesday evenings · Village School turf",
-    captain: "Captain: R. Fitzgerald",
-    body: "The flagship senior side of MHD FC. Competes in the open division of the New England Over-the-Hill Soccer League and represents the club in cup competitions including regional BSSL fixtures.",
+    training: "TBD",
+    captain: "Captain: TBD",
+    body: "The youngest of the club's senior sides — competitive, quick, and the first stop for players stepping into MHD FC colors after their college and open-league years.",
   },
   {
-    slug: "over-40",
-    name: "MHD FC Over-40",
-    league: "OTHSL Masters Division",
+    slug: "o40",
+    name: "MHD FC O40's",
+    league: "Over-40 Division",
     home: "Seaside Park, Marblehead",
-    training: "Thursday evenings · Riverhead Beach pitch",
-    captain: "Captain: T. Robinson",
-    body: "The founding side of the club. A continuous OTHSL presence, and the anchor of the club's culture — many first-team veterans transition here.",
+    training: "TBD",
+    captain: "Captain: TBD",
+    body: "One of the club's cornerstone sides. A blend of experienced players and long-time club members carrying the crest through the Over-40 ranks.",
   },
   {
-    slug: "068",
-    name: "MHD FC 068",
-    league: "Beverly Regional Affiliate",
-    home: "Endicott Turf, Beverly",
-    training: "Tuesday evenings · Endicott",
-    captain: "Captain: E. Park",
-    body: "Our regional affiliate side based in Beverly, extending the MHD FC crest across the North Shore and deepening the club's regional partnerships.",
+    slug: "o48",
+    name: "MHD FC O48's",
+    league: "Over-48 Division",
+    home: "Seaside Park, Marblehead",
+    training: "TBD",
+    captain: "Captain: TBD",
+    body: "A tight-knit veteran side keeping the game — and the club's culture — alive at the Over-48 level.",
+  },
+  {
+    slug: "o55",
+    name: "MHD FC O55's",
+    league: "Over-55 Division",
+    home: "Seaside Park, Marblehead",
+    training: "TBD",
+    captain: "Captain: TBD",
+    body: "Long-serving club members who continue to represent MHD FC across the Over-55 division, mentoring younger sides along the way.",
+  },
+  {
+    slug: "o68",
+    name: "MHD FC O68's",
+    league: "Over-68 Division",
+    home: "Seaside Park, Marblehead",
+    training: "TBD",
+    captain: "Captain: TBD",
+    body: "The elder statesmen of MHD FC. Proof that the game — and the club — is for life.",
   },
 ];
 
@@ -45,7 +63,7 @@ function Teams() {
   return (
     <div className="bg-background text-foreground">
       <Nav />
-      <PageHeader eyebrow="The Squad" title="Three teams. One crest." subtitle="MHD FC fields three senior teams that together define the club's competitive footprint across the North Shore." />
+      <PageHeader eyebrow="The Squad" title="Five teams. One crest." subtitle="MHD FC fields five age-group sides that together define the club's competitive footprint across the North Shore." />
       <Section>
         <div className="space-y-6">
           {teams.map((t, i) => (
