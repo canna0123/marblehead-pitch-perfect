@@ -145,7 +145,7 @@ export function Nav() {
           <div className="mx-auto max-w-[1600px] px-6 py-2 flex items-center justify-between gap-4 mono text-[10px] md:text-[11px] tracking-[0.3em] uppercase">
             <span className="flex items-center gap-2">
               <span className="inline-block w-1.5 h-1.5 rounded-full bg-crimson animate-pulse" />
-              <span>Now Recruiting · 2025 Season</span>
+              <span>Now Recruiting · 2026/27 Season</span>
             </span>
           </div>
         </div>
