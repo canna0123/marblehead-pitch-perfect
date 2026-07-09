@@ -21,12 +21,10 @@ const clubHonors = [
 ];
 
 const individualHonors = [
-  { y: "2004", n: "M. O'Brien", h: "OTHSL Golden Boot" },
-  { y: "2011", n: "R. Fitzgerald", h: "BSSL Player of the Year" },
-  { y: "2015", n: "D. Kinney", h: "OTHSL Goalkeeper of the Year" },
-  { y: "2018", n: "J. Motoole", h: "US Open Cup Squad — Captain" },
-  { y: "2021", n: "T. Robinson", h: "OTHSL Sportsmanship Award" },
-  { y: "2024", n: "E. Park", h: "North Shore Coach of the Year (Youth)" },
+  { y: "2004", n: "TBD", h: "OTHSL Golden Boot" },
+  { y: "2011", n: "TBD", h: "BSSL Player of the Year" },
+  { y: "2024", n: "Ethan Park", h: "North Shore Coach of the Year (Youth)" },
+  { y: "2025", n: "Adam Bailey", h: "Northeastern Conference Coach of the Year" },
 ];
 
 function Honors() {
