@@ -5,7 +5,10 @@ export const Route = createFileRoute("/news")({
   head: () => ({
     meta: [
       { title: "News · Marblehead Football Club" },
-      { name: "description", content: "The latest updates from MHD FC — board news, community initiatives, and match reports." },
+      {
+        name: "description",
+        content: "The latest updates from MHD FC — board news, community initiatives, and match reports.",
+      },
     ],
   }),
   component: News,
@@ -21,7 +24,7 @@ const posts = [
   },
   {
     date: "2025-02-14",
-    author: "J. Motoole",
+    author: "Admin",
     tag: "President's Update",
     title: "Board commitments deposited; Watch Party & Gear Drive in planning",
     lede: "A brief update from the President: Mike Grubor and Ethan Park have led our engagement with Lynn Youth Soccer, attending tryouts and identifying prospective scholarship recipients for NSSA. Board commitments are in and deposited at National Grand Bank. We're also planning a World Cup watch party with a gear drive at RIP Tide Lounge, and an end-of-season MHD community gathering.",
@@ -49,12 +52,15 @@ const posts = [
   },
 ];
 
-
 function News() {
   return (
     <div className="bg-background text-foreground">
       <Nav />
-      <PageHeader eyebrow="Latest Updates" title="Club News" subtitle="Board updates, announcements, and reports from around Marblehead Football Club." />
+      <PageHeader
+        eyebrow="Latest Updates"
+        title="Club News"
+        subtitle="Board updates, announcements, and reports from around Marblehead Football Club."
+      />
       <Section>
         <div className="max-w-4xl mx-auto space-y-14">
           {posts.map((p) => (
@@ -66,9 +72,13 @@ function News() {
                 <span>·</span>
                 <span>{p.author}</span>
               </div>
-              <h2 className="display text-3xl md:text-4xl text-navy-deep font-semibold mt-4 leading-tight">{p.title}</h2>
+              <h2 className="display text-3xl md:text-4xl text-navy-deep font-semibold mt-4 leading-tight">
+                {p.title}
+              </h2>
               <p className="mt-4 text-lg text-foreground/85 leading-relaxed">{p.lede}</p>
-              <button className="mt-6 text-crimson font-semibold border-b-2 border-crimson hover:border-navy-deep hover:text-navy-deep">Read the full update →</button>
+              <button className="mt-6 text-crimson font-semibold border-b-2 border-crimson hover:border-navy-deep hover:text-navy-deep">
+                Read the full update →
+              </button>
             </article>
           ))}
         </div>
